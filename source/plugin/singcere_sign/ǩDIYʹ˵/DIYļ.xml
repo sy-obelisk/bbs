@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="spacecss"><![CDATA[]]></item>
+	<item id="layoutdata">
+		<item id="diy_right">
+			<item id="frame`frameqO5g5a">
+				<item id="attr">
+					<item id="name"><![CDATA[frameqO5g5a]]></item>
+					<item id="moveable"><![CDATA[true]]></item>
+					<item id="className"><![CDATA[cl_frame_bm frame move-span cl frame-1]]></item>
+					<item id="titles"><![CDATA[]]></item>
+				</item>
+				<item id="column`frameqO5g5a_left">
+					<item id="attr">
+						<item id="name"><![CDATA[frameqO5g5a_left]]></item>
+						<item id="className"><![CDATA[column frame-1-c]]></item>
+					</item>
+					<item id="block`portal_block_274">
+						<item id="attr">
+							<item id="name"><![CDATA[portal_block_274]]></item>
+							<item id="className"><![CDATA[cl_block_bm block move-span]]></item>
+							<item id="titles"><![CDATA[]]></item>
+						</item>
+					</item>
+				</item>
+			</item>
+		</item>
+	</item>
+	<item id="blockdata">
+		<item id="block">
+			<item id="274">
+				<item id="bid"><![CDATA[274]]></item>
+				<item id="blockclass"><![CDATA[member_member]]></item>
+				<item id="blocktype"><![CDATA[0]]></item>
+				<item id="name"><![CDATA[Ç©µ½_ÓÒ²àGirl]]></item>
+				<item id="title"><![CDATA[]]></item>
+				<item id="classname"><![CDATA[cl_block_bm]]></item>
+				<item id="summary"><![CDATA[]]></item>
+				<item id="uid"><![CDATA[1]]></item>
+				<item id="username"><![CDATA[admin]]></item>
+				<item id="styleid"><![CDATA[0]]></item>
+				<item id="blockstyle">
+					<item id="name"><![CDATA[]]></item>
+					<item id="blockclass"><![CDATA[member_member]]></item>
+					<item id="makethumb"><![CDATA[0]]></item>
+					<item id="getpic"><![CDATA[0]]></item>
+					<item id="getsummary"><![CDATA[0]]></item>
+					<item id="settarget"><![CDATA[1]]></item>
+					<item id="moreurl"><![CDATA[0]]></item>
+					<item id="fields">
+						<item id="0"><![CDATA[avatar_middle]]></item>
+						<item id="1"><![CDATA[title]]></item>
+						<item id="2"><![CDATA[reason]]></item>
+						<item id="3"><![CDATA[url]]></item>
+					</item>
+					<item id="template">
+						<item id="raw"><![CDATA[<h3 class="tit">ÃÀGIRL</h3>
+<ul class="photos cl J_beautys">
+	[loop]
+    <li>
+        <img src="{avatar_middle}" class="head_img" alt="{title}">
+        <div class="info  J_info f-trans">
+            <h3>{title}</h3>
+            <p class="con">
+                ÈëÑ¡ÀíÓÉ:{reason}
+            </p>
+            <p class="link">
+                ·ÃÎÊ¸öÈË¿Õ¼ä
+<img src="source/plugin/singcere_sign/template/src/img/come_11.png"></p>
+        </div>
+        <a href="{url}" title="{title}"{target} class="J_intro mask"></a>
+    </li>
+	[/loop]
+</ul>]]></item>
+						<item id="footer"><![CDATA[]]></item>
+						<item id="header"><![CDATA[]]></item>
+						<item id="indexplus">
+						</item>
+						<item id="index">
+						</item>
+						<item id="orderplus">
+						</item>
+						<item id="order">
+						</item>
+						<item id="loopplus">
+						</item>
+						<item id="loop"><![CDATA[<li>
+        <img src="{avatar_middle}" class="head_img" alt="{title}">
+        <div class="info  J_info f-trans">
+            <h3>{title}</h3>
+            <p class="con">
+                ÈëÑ¡ÀíÓÉ:{reason}
+            </p>
+            <p class="link">
+                ·ÃÎÊ¸öÈË¿Õ¼ä
+<img src="source/plugin/singcere_sign/template/src/img/come_11.png"></p>
+        </div>
+        <a href="{url}" title="{title}"{target} class="J_intro mask"></a>
+    </li>]]></item>
+					</item>
+					<item id="hash"><![CDATA[41f3bcf7]]></item>
+				</item>
+				<item id="picwidth"><![CDATA[0]]></item>
+				<item id="picheight"><![CDATA[0]]></item>
+				<item id="target"><![CDATA[blank]]></item>
+				<item id="dateformat"><![CDATA[Y-m-d]]></item>
+				<item id="dateuformat"><![CDATA[0]]></item>
+				<item id="script"><![CDATA[member]]></item>
+				<item id="param">
+					<item id="uids"><![CDATA[]]></item>
+					<item id="special"><![CDATA[]]></item>
+					<item id="gender"><![CDATA[]]></item>
+					<item id="xbirthprovince"><![CDATA[]]></item>
+					<item id="xresideprovince"><![CDATA[]]></item>
+					<item id="avatarstatus"><![CDATA[0]]></item>
+					<item id="orderby"><![CDATA[credits]]></item>
+					<item id="extcredit"><![CDATA[1]]></item>
+					<item id="lastpost"><![CDATA[]]></item>
+					<item id="startrow"><![CDATA[0]]></item>
+					<item id="items"><![CDATA[6]]></item>
+				</item>
+				<item id="shownum"><![CDATA[6]]></item>
+				<item id="cachetime"><![CDATA[3600]]></item>
+				<item id="cachetimerange"><![CDATA[]]></item>
+				<item id="punctualupdate"><![CDATA[0]]></item>
+				<item id="hidedisplay"><![CDATA[0]]></item>
+				<item id="dateline"><![CDATA[1395483967]]></item>
+				<item id="notinherited"><![CDATA[0]]></item>
+				<item id="isblank"><![CDATA[0]]></item>
+			</item>
+		</item>
+		<item id="style">
+		</item>
+	</item>
+</root>

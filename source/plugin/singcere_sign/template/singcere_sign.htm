@@ -1,0 +1,185 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css"></style>
+<link rel="stylesheet" href="source/plugin/singcere_sign/template/src/css/come.css">
+
+<div id="th-subheader">
+    <div class="custom cl">
+        <div class="subheader-content">
+            <p class="subheader-text cl">
+                <span class="z"> {lang singcere_sign:statistics}  </span>
+                <span class="y">
+                     {lang singcere_sign:today_star} $countdata[username] &nbsp;&nbsp;
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="body_content">
+    <div class="lineB cl">
+        <div class="qdleft">
+            <!--{if empty($mysignlog)}-->
+                <a id="share" onclick="showWindow(this.id, this.href);return false;"  href="plugin.php?id=singcere_sign&signsubmit=yes&formhash={FORMHASH}" class="btn J_chkitot" ></a>
+            <!--{else}-->
+                <span class="btn btnvisted"></span>
+            <!--{/if}-->
+            <div class="paiming cl">
+                <!--{if $mysignlog}-->
+                <div class="font"> {lang singcere_sign:today_sign_rank} </div>
+                <div class="pics J_numpic clearfix J_animation">
+                   <!--{loop str_split($countdata[position])  $pvalue}-->
+                    <span class='snum{$pvalue}'></span>
+                    <!--{/loop}-->
+                </div>
+                <!--{else}-->
+                <div class="font" id="qdfonts"> {lang singcere_sign:today_unsign} </div>
+                <!--{/if}-->
+                <div class="pics J_numpic cl J_animation" id="qdbn2" style="display:none;">
+                    <span class="zero"></span>
+                </div>
+            </div>
+        </div>
+        <div class="qdright">
+            <div class="content">
+                <h3 class="mainCon">
+                    <div class="user">
+                        <!--{avatar($_G[uid],small)}-->
+                        <a href="home.php?mod=space&uid=$_G[uid]" class="author">$_G[member][username]</a>
+                    </div>
+                    <span class="jtitle">{lang singcere_sign:daytips}</span>
+                    <div class="jingju J_xyline">
+                        <span id="bigpower" class="xyart J_xyfont">$daytips</span>
+                    </div>
+                </h3>
+                <ul class="countqian cl">
+                    <li>
+                        <h4> {lang singcere_sign:continue_sign} </h4>
+                        <p>
+                            <b class="pics J_numpic J_animation" style="height:23px;">
+                                <!--{loop str_split($mysigncount[continuous]) $cvalue}-->
+                                <span class='snum$cvalue'></span>
+                                <!--{/loop}-->
+                            </b>  
+                            <b class="qiandao"> {lang singcere_sign:day} </b>
+                        </p>
+                    </li>
+                    <li>
+                        <h4> {lang singcere_sign:ranklevel} </h4>
+                        <p class="lvgrade">
+                            <input type="hidden" class="hidnum" id="lxlevel" value="1">
+                            <b class="pics J_numpic J_animation" style="height:26px;">
+                                <!--{loop str_split($mysigncount[level]) $lvalue}-->
+                                <span class='snum$lvalue'></span>
+                                <!--{/loop}--></b> 
+                        </p>
+                    </li>
+                    <li>
+                        <h4> {lang singcere_sign:credit_reward} </h4>
+                        <p>
+                            <input type="hidden" class="hidnum" id="lxreward" value="4">
+                            <b class="pics J_numpic J_animation" style="height:23px;">
+                                <!--{loop str_split($mysigncount[rewards]) $rvalue}-->
+                                <span class='snum$rvalue'></span>
+                                <!--{/loop}--> </b>
+                            <b> $_G['setting']['extcredits'][$config['credittype']][title] </b>
+                        </p>
+                    </li>
+                    <li>
+                        <h4> {lang singcere_sign:signs} </h4>
+                        <p>
+                            <input type="hidden" class="hidnum" id="lxtdays" value="2">
+                            <b class="pics J_numpic J_animation" style="height:23px;">
+                                <!--{loop str_split($mysigncount[signs]) $svalue}-->
+                                <span class='snum$svalue'></span>
+                                <!--{/loop}--> </b>
+                            <b> {lang singcere_sign:day} </b>
+                        </p>
+                    </li>
+                </ul>
+                <div class="weather_p">
+                    <div class="con">
+                        $countdata[count]
+                        <span> {lang singcere_sign:person} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lineC cl" >
+        <div class="lineC_left">
+            <div class="left_tit">
+                <ul class="paihang J_phbtn cl" id="rankselect">
+                    <li  class="active" data-type="day"> {lang singcere_sign:today_rank}</li>
+                    <li data-type="month"> {lang singcere_sign:month_rank} </li>
+                    <li data-type="total"> {lang singcere_sign:total_rank} </li>
+                    <li data-type="reward"> {lang singcere_sign:reward_rank} </li>
+                </ul>
+            </div>
+            <div id="rankshow"></div>
+        </div>
+        <div class="lineC_right">
+            <!--[diy=diy_right]-->
+            <div id="diy_right" class="area"></div>
+            <!--[/diy]-->
+        </div>
+    </div>
+    <div class="lineD">
+        <h3 class="tit"> {lang singcere_sign:prize_user} </h3>
+        <div id="J_scroll" class="content cl">
+            <ul class="leftcon cl J_mifens">
+                <!--{loop $prizeuser $key $user}-->
+                <li id="mifen14">
+                    <!--{avatar($user[uid],small)}-->
+                    <a href="home.php?mod=space&uid=$user[uid]" class="author">$user[username]</a>
+                    <br>
+                    <!--{if $giftlist[$user[gid]]}--><span class="thing">{lang singcere_sign:gift_get} $giftlist[$user[gid]][name]</span><!--{/if}-->
+                </li>
+                <!--{/loop}-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="source/plugin/singcere_sign/template/src/js/marScroll.js"></script>
+<script type="text/javascript">
+    new GyMarquee({
+        'targetID':'J_scroll',
+        'effect':'scroll',
+        'scrollHeight':68
+    });
+
+    function g(o) {
+        return document.getElementById(o);
+    }
+
+    var liarr = $('rankselect').getElementsByTagName('li');
+    for(var i =0; i < liarr.length; i++) {
+        _attachEvent(liarr[i], 'mouseover', function() {
+            hoverli(this, 'rankshow');
+        });
+        hoverli(liarr[0], 'rankshow');
+    }
+
+    function hoverli(obj, showid) {
+        var tabs = obj.parentNode.getElementsByTagName('li');
+        for(var j = 0; j < tabs.length; j++) {
+            tabs[j].className = '';
+            if($(showid + tabs[j].getAttribute('data-type'))) {
+                $(showid + tabs[j].getAttribute('data-type')).style.display = 'none';
+            }
+        }
+
+        obj.className = 'active';
+        if(!$(showid + obj.getAttribute('data-type'))) {
+            var dom = document.createElement('div');
+            dom.id = showid + obj.getAttribute('data-type');
+            $(showid).appendChild(dom);
+            ajaxget('plugin.php?id=singcere_sign&action=rank&type=' + obj.getAttribute('data-type'), showid + obj.getAttribute('data-type'), showid + obj.getAttribute('data-type'));
+        } else {
+
+        }
+        $(showid + obj.getAttribute('data-type')).style.display = 'block';
+    }
+
+</script>
+<!--{template common/footer}-->

@@ -1,0 +1,6 @@
+ul.thumblist li {cursor: url(source/plugin/chs_tiebalist/template/images/cur_zin.cur),pointer!important;}
+img.picture{cursor: url(source/plugin/chs_tiebalist/template/images/cur_zout.cur),pointer!important;}
+.goprevious {cursor: url(source/plugin/chs_tiebalist/template/images/bigpicprev.cur),pointer!important;background-image: url(about:blank);}
+.gonext {cursor: url(source/plugin/chs_tiebalist/template/images/bigpicnext.cur),pointer!important;background-image: url(about:blank);}
+/*for ie6*/
+.lastpostwrap {zoom:1;}

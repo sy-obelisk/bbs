@@ -1,0 +1,106 @@
+<!--{block return}-->
+<style type="text/css">
+    .sign_keep_span { width: 100px; position: absolute; margin: 24px 0 0 60px; color: #eaf2fe; cursor: pointer}
+    .sign_succ_calendar { position: relative}
+    .calendar_title_span { float: left; font-weight: bold; font-family: Arial}
+    .calendar_month_prev { display: inline-block; width: 18px; background: url(source/plugin/singcere_sign/template/src/img/balv/sign_prev.gif) center no-repeat; *display:inline; zoom: 1; cursor: pointer}
+    .calendar_month_next { display: inline-block; width: 18px; background: url(source/plugin/singcere_sign/template/src/img/balv/sign_next.gif) center no-repeat; *display:inline; zoom: 1; cursor: pointer}
+    .calendar_title_month { float: right; background-color: #FFF; border: 1px solid #e3e3e3; border-bottom: 0}
+    .calendar_month_span { display: inline; line-height: 24px}
+    .sign_succ_table { width: 247px; border: 1px solid #e3e3e3; background: #FFF; border-collapse: collapse; border-spacing: 0; color: #666}
+    .sign_succ_table td { height: 26px; cursor: default}
+    .sign_canlerdar_footer { background: white}
+    .signed_anime_day { background: url(source/plugin/singcere_sign/template/src/img/sign_have_anime.gif) center no-repeat}
+    .sign_succ_canlerdar_days td { border-right: 1px solid #e3e3e3; border-bottom: 1px solid #e3e3e3; font-weight: bold}
+    .sign_succ_table tr:nth-child(1) td, .sign_succ_table .sign_succ_canlerdar_head td { border-bottom: 1px solid #e3e3e3}
+    .sign_succ_canlerdar_days td:nth-child(7) { border-right: 0}
+    .sign_succ_info { padding-left: 10px; text-align: left}
+    .sign_succ_info { padding-left: 10px; text-align: left}
+    .sign_succ_count_span { font-weight: bold}
+    .sign_index_num, .sign_succ_count_span { color: #ff7f3e}
+    .sign_text_gray { color: #666}
+
+    .sign_ad_mobi { display: block; margin-bottom: 10px;}
+    .sign_ad_mobi_wrapper:before { content: '.'; width: 0; height: 100%; vertical-align: middle; display: inline-block}
+    .sign_ad_mobi_wrapper { border-bottom: solid 1px #EEE; padding-bottom: 10px; margin-bottom: 10px; font-size: 0}
+    .sign_ad_mobi_wrapper .sign_text_gray { vertical-align: middle; display: inline-block; font-size: 12px}
+    .sign_mod_bright { border: 0; position:absolute; {if $this->_config['panel_top']}top:{$this->_config['panel_top']}px;{else}bottom:{$this->_config['panel_bottom']}px;{/if} left: 50%; margin-left: {$this->_config['panel_left']}px; height: 50px; z-index: 999; -moz-box-shadow: 0 0 10px #ccc; -webkit-box-shadow: 0 0 10px#ccc; box-shadow: 0 0 5px #DDD; border-radius: 3px;}
+    .sign_mod_bright_pb { border: 1px solid #e9ebef; border-bottom: 0; zoom: 1}
+    .sign_title_text_bright { width: 178px; height: 19px; margin: 13px auto 0; text-align: center; font-size: 14px; font-family: STHeiti, "Microsoft Yahei", Arial, "����"}
+    .sign_box_bright { width: 200px; height: 50px; display: block; position: relative}
+    .sign_box_bright, .sign_box_bright_hover, .sign_box_bright_signed, .sign_box_bright_noclass, .sign_box_bright_noclass_signed, .sign_box_bright_noclass_hover { background-image: url(source/plugin/singcere_sign/template/src/img/sign_box_bright.png); background-repeat: no-repeat}
+    .sign_box_bright_hover { background-position: 0 -50px}
+    .sign_box_bright_signed { background-position: 0 -100px; cursor: pointer;}
+    .sign_box_bright_noclass { background-position: 0 -150px}
+    .sign_box_bright_noclass_hover { background-position: 0 -200px}
+    .sign_box_bright_noclass_signed { background-position: 0 -250px}
+    .sign_btn_bright, .sign_box_bright .signstar_signed { width: 107px; height: 50px; display: block; float: left; outline: 0}
+    .sign_dir_bright { display: block; width: 93px; height: 50px; float: left}
+    .sign_total_num_bright, .sign_dir_num_bright, .sign_total_num_bright_noclass { color: #737373; position: absolute; left: 142px; word-break: normal}
+    .sign_total_num_bright { top: 5px}
+    .sign_total_num_bright_noclass { top: 15px}
+    .sign_dir_num_bright { top: 28px}
+    .sign_mod_bright .sign_succ1 { top: 103px}
+    .sign_mod_bright_pb .sign_succ1 { top: 116px}
+    .sign_mod_bright .sign_succ_superboy { top: 80px}
+    .sign_mod_bright_pb .sign_succ_superboy { top: 93px}
+    .sign_mod_bright .sign_keep_span { width: 63px}
+    .sign_mod_bright .sign_rights_display { margin: 0 auto; display: inline-block; *margin-left:27px}
+    .sign_mod_bright .sign_mod_btn_down_link { margin-bottom: -3px}
+    .sign_mod_bright .sign_keep_span { margin: 25px 0 0 48px; text-align: left}
+    .sign_replenish_tip { width: 200px; height: 25px; position: relative; top: -1px; line-height: 24px; text-align: center; background: url(source/plugin/singcere_sign/template/src/img/sign_box_bright.png) no-repeat 0 -300px; }
+    .sign_replenish_signed_tip { background-position: 0 -325px}
+    .sign_succ_table td.unsigned_day { cursor: pointer; position: relative}
+    .sign_succ_table td.unsigned_day_hover { background-color: #ffffda}
+    .sign_succ_table td .rpln_tip { font-weight: normal; text-align: center}
+    #signstar_wrapper_menu { padding: 25px 0 0 0; width: 269px;}
+    #singstar_break_menu_content { width: 247px; background: #FCFCFC; padding: 10px; border:1px solid #eee; border-radius: 5px; margin: 10px 0;}
+</style>
+
+<div id="singstar_break" class="sign_mod_bright" {if $_G[uid]}onmouseenter="ajaxmenu(this,'500',1,2,'','','');"{/if} href="plugin.php?id=singcere_sign&action=detail">
+
+    <!--{if $mysigncount[lastsign] < $todaytime }-->
+    <div id="signstar_wrapper" class="j_sign_box sign_box_bright sign_box_bright_noclass">
+        <a id="panel_sign" href="plugin.php?id=singcere_sign&formhash={FORMHASH}&signsubmit=yes" onclick="showWindow(this.id, this.href);"  class="j_signbtn sign_btn_bright j_cansign"></a>
+        <a class="j_signdir sign_dir_bright" target="_blank" href="plugin.php?id=singcere_sign">
+            <span class="sign_total_num_bright_noclass">{$countdata[count]} {lang singcere_sign:signednum}</span>
+        </a>
+    </div>
+
+    <script>
+        var oBox = document.getElementById("signstar_wrapper");
+        oBox.onmouseover = function() {
+            oBox.className = "j_sign_box sign_box_bright sign_box_bright_noclass sign_box_bright_noclass_hover";
+        };
+        oBox.onmouseout = function() {
+            oBox.className = "j_sign_box sign_box_bright sign_box_bright_noclass";
+        };
+    </script>
+
+    <!--{else}-->
+    <div id="signstar_wrapper" class="j_sign_box sign_box_bright sign_box_bright_signed" onclick="window.location='plugin.php?id=singcere_sign'">
+        <span title="" class="j_signbtn signstar_signed">
+            <span class="sign_keep_span">{lang singcere_sign:continuous} {$mysigncount[continuous]} {lang singcere_sign:day}</span>
+        </span>
+        <span class="j_signdir sign_dir_bright">
+            <span class="sign_total_num_bright"> $countdata[count]  {lang singcere_sign:person}</span>
+            <span class="sign_dir_num_bright"> $countdata[position] {lang singcere_sign:ranking}</span>
+        </span>
+    </div>
+
+    <!--{/if}-->
+
+</div>
+
+<script>
+    function expandIt(el) {
+     whichEl = document.getElementById(el)
+     if (whichEl.style.display == 'none') {
+      whichEl.style.display = '';
+     }
+     else {
+      whichEl.style.display = 'none';
+     }
+     }
+</script>
+<!--{/block}-->

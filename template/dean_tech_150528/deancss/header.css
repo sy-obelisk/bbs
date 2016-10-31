@@ -1,0 +1,125 @@
+/*============头部css=================*/
+#header{
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+}
+.head_nav{
+    width: 1210px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 18px;
+}
+.head_nav .log_img{
+    margin-top: -15px;
+}
+.head_nav .he_nav_right{
+    /*width: 621px;*/
+    float: right;
+}
+.he_nav_right ul li img{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+.head_nav .he_nav_right ul{
+    margin-right: 8px;
+    /*margin-top: 20px;*/
+}
+.head_nav .he_nav_right ul li{
+    list-style: none;
+    float: left;
+    padding: 10px 10px;
+    /*margin-right: 20px;*/
+    position: relative;
+}
+.head_nav .he_nav_right ul li a{
+    /*color: #4c4c4c;*/
+    text-decoration: none;
+    /*font-size: 3pt;*/
+}
+.head_nav .he_nav_right input{
+    border: none;
+    background: #767576;
+    color: white;
+    padding: 4px 17px;
+}
+
+.head_nav .he_nav_right input:hover{
+    background: #34388e;
+}
+.he_nav_register{
+    /*margin-left: -4px;*/
+}
+.he_nav_li_hover{
+    margin-top: 2px;
+}
+.he_nav_li_hover:hover{
+    /*border-bottom: 2px green solid;*/
+    background: url("../images/index_head_bgs.jpg");
+    cursor: pointer;
+}
+.he_nav_li_hover:hover a{
+    color: #ffffff;
+}
+.he_nav_li_hover.on{
+    /*border-bottom: 2px green solid;*/
+    background: url("../images/index_head_bgs.jpg");
+}
+.he_nav_li_hover.on a{
+    color: #ffffff;
+}
+/*.he_nav_li_hover:hover{*/
+/*border-bottom: 2px green solid;*/
+/*}*/
+/*.he_nav_li_hover:hover a{*/
+/*color: #31318b;*/
+/*}*/
+/*.he_nav_li_hover.on{*/
+/*border-bottom: 2px green solid;*/
+/*}*/
+/*.he_nav_li_hover.on a{*/
+/*color: #31318b;*/
+/*}*/
+
+/*登录后的下拉框*/
+.he_nav_right ul li .he_nav_xiala{
+    width:85%;
+    background: #e6e6e6;
+    position: absolute;
+    display: none;
+    z-index: 1100;
+    padding-bottom: 5px;
+}
+.he_nav_right ul li .he_nav_xiala ul{
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.he_nav_right ul li .he_nav_xiala ul li{
+    width: 100%;
+    clear: both;
+    font-size: 13px;
+    text-align: center;
+    padding: 2px 0;
+}
+.he_nav_right ul li .he_nav_xiala ul li:hover{
+    cursor: pointer;
+    background: #a9a9a9;
+}
+.he_nav_right ul li .he_nav_xiala ul li:hover a{
+    color: #ffffff;
+}
+.he_nav_right ul li .he_nav_xiala ul li a{
+    color: #333795;
+}
+#user_btn{
+    background: url(../images/huiyuan_login.png) no-repeat center;
+    width: 123px;
+    height: 100%;
+    /*多余部分显示省略号*/
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+/*============头部css end=================*/

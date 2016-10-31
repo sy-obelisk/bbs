@@ -1,0 +1,140 @@
+:focus {
+  outline: none; }
+
+.team_leftSide .member-sprite {
+  background: url("../images/icons_all_small.png") no-repeat; }
+.team_leftSide .member-all {
+  background-position: 3px -455px;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 5px 0 5px 8px;
+  float: left; }
+.team_leftSide .member-invite-players {
+  background-position: -31px -455px;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 5px 0 5px 8px;
+  float: left; }
+.team_leftSide .member-app-processing {
+  background-position: 3px -514px;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 5px 0 5px 8px;
+  float: left; }
+.team_leftSide .member-leader {
+  background-position: -43px -392px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  top: 24px;
+  left: 28px; }
+.team_leftSide .member-del {
+  background-position: -144px -435px;
+  width: 21px;
+  height: 21px;
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 13px; }
+  .team_leftSide .member-del:hover {
+    background-position: -121px -435px; }
+.team_leftSide .member {
+  z-index: 10;
+  width: 236px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 16px; }
+  .team_leftSide .member::-webkit-scrollbar {
+    width: 6px;
+    background: #fafafa; }
+  .team_leftSide .member::-webkit-scrollbar-thumb {
+    background: #fafafa; }
+  .team_leftSide .member:hover::-webkit-scrollbar {
+    width: 6px;
+    background: rgba(0, 0, 0, 0.1); }
+  .team_leftSide .member:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); }
+  .team_leftSide .member.fixed {
+    position: fixed;
+    _position: absolute;
+    top: 40px; }
+  .team_leftSide .member a {
+    width: 230px;
+    height: 46px;
+    line-height: 46px;
+    display: block;
+    position: relative;
+    border-radius: 3px; }
+    .team_leftSide .member a:hover {
+      background-color: #e1e1e1;
+      color: #333; }
+      .team_leftSide .member a:hover .member-del {
+        display: block; }
+  .team_leftSide .member .active a {
+    background-color: #68c04a;
+    color: #fff; }
+  .team_leftSide .member .active .member-user-avatar {
+    border: 2px solid rgba(201, 237, 189, 0.6); }
+  .team_leftSide .member .active .member-app-processing {
+    background-position: -65px -455px; }
+  .team_leftSide .member .member-name {
+    float: left;
+    margin-left: 10px;
+    width: 148px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+  .team_leftSide .member .member-user-avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px 0 5px 8px;
+    float: left;
+    border-radius: 50px;
+    border: 2px solid transparent; }
+  .team_leftSide .member .mark {
+    border-radius: 10px;
+    padding: 3px 5px;
+    display: inline-block;
+    font-size: 8px;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    background: #ff4057; }
+
+.member-modal .member-modal-title {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 28px; }
+.member-modal .member-modal-context {
+  font-size: 14px;
+  resize: none;
+  width: 370px;
+  height: 125px;
+  padding: 5px;
+  margin: 0 auto;
+  display: block; }
+.member-modal .member-modal-sub-title {
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 10px; }
+.member-modal .member-success-msg {
+  padding-bottom: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+  color: #a9a9a9; }
+.member-modal .member-success-text {
+  padding-bottom: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+  color: #a9a9a9; }
+.member-modal .member-failed-text {
+  padding: 20px 70px 0;
+  text-align: left;
+  font-size: 14px;
+  color: #a9a9a9; }
+

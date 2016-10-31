@@ -1,0 +1,18 @@
+<?PHP exit;?>	1435818865	admin	1	127.0.0.1	login		2	GET={mod=modcp; fid=2; action=login; }; POST={};
+<?PHP exit;?>	1436404748	xingnasnhi	3	127.0.0.1	login		45	GET={mod=modcp; fid=45; action=login; }; POST={};
+<?PHP exit;?>	1436404755	xingnasnhi	3	127.0.0.1	thread		45	GET={mod=modcp; fid=45; action=thread; }; POST={};
+<?PHP exit;?>	1436404771	xingnasnhi	3	127.0.0.1	thread	post	2	GET={mod=modcp; action=thread; op=post; fid=2; }; POST={};
+<?PHP exit;?>	1436404772	xingnasnhi	3	127.0.0.1	thread	thread	2	GET={mod=modcp; action=thread; op=thread; fid=2; }; POST={};
+<?PHP exit;?>	1436404788	xingnasnhi	3	127.0.0.1	recyclebin		2	GET={mod=modcp; action=recyclebin; fid=2; }; POST={};
+<?PHP exit;?>	1436404790	xingnasnhi	3	127.0.0.1	thread	post	2	GET={mod=modcp; action=thread; op=post; fid=2; }; POST={};
+<?PHP exit;?>	1436404795	xingnasnhi	3	127.0.0.1	thread	thread	2	GET={mod=modcp; action=thread; op=thread; fid=2; }; POST={};
+<?PHP exit;?>	1436404799	xingnasnhi	3	127.0.0.1	recyclebin		2	GET={mod=modcp; action=recyclebin; fid=2; }; POST={};
+<?PHP exit;?>	1436404800	xingnasnhi	3	127.0.0.1	recyclebinpost		2	GET={mod=modcp; action=recyclebinpost; fid=2; }; POST={};
+<?PHP exit;?>	1436770871	admin	1	127.0.0.1	login	post	45	GET={mod=modcp; action=login; op=post; do=search; searchsubmit=1; users=thinku; fid=45; }; POST={};
+<?PHP exit;?>	1436843567	admin	1	127.0.0.1	login	post	45	GET={mod=modcp; action=login; op=post; searchsubmit=1; do=search; fid=45; }; POST={};
+<?PHP exit;?>	1436843574	admin	1	127.0.0.1	thread	post	45	GET={mod=modcp; action=thread; op=post; searchsubmit=1; do=search; fid=45; }; POST={};
+<?PHP exit;?>	1436843616	admin	1	127.0.0.1	thread	post	2	GET={mod=modcp; action=thread; op=post; fid=2; do=search; starttime=2015-05-15; endtime=2015-07-14; searchsubmit=true; }; POST={do=search; fid=2; starttime=2015-05-15; endtime=2015-07-14; searchsubmit=true; };
+<?PHP exit;?>	1436843634	admin	1	127.0.0.1	thread	thread	2	GET={mod=modcp; action=thread; op=thread; fid=2; }; POST={};
+<?PHP exit;?>	1436843652	admin	1	127.0.0.1	forum	editforum	2	GET={mod=modcp; action=forum; op=editforum; fid=2; }; POST={};
+<?PHP exit;?>	1437014726	雷哥GMAT在线	3	218.88.45.238	login	ban	45	GET={mod=modcp; action=login; op=ban; uid=820; fid=45; }; POST={};
+<?PHP exit;?>	1438224149	admin	1	222.210.168.93	login	post	45	GET={mod=modcp; action=login; op=post; searchsubmit=1; do=search; users=p0PoH2t2l29; fid=45; }; POST={};

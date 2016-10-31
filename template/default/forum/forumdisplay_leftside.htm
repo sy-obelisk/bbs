@@ -1,0 +1,43 @@
+
+<!--{if $leftside['favorites']}-->
+	<h2 class="mbn"><a href="home.php?mod=space&do=favorite&type=forum">{lang favorite_forums}</a></h2>
+	<dl id="lf_fav" class="bdl_fav mbm">
+		<!--{loop $leftside['favorites'] $favfid $fdata}-->
+			<dd>
+				<!--{if !empty($_G['cache']['forums'][$favfid]['domain']) && !empty($_G['setting']['domain']['root']['forum'])}-->
+					<a href="http://{$_G['cache']['forums'][$favfid]['domain']}.{$_G['setting']['domain']['root']['forum']}" title="$fdata[0]">$fdata[0]</a>
+				<!--{else}-->
+					<a href="forum.php?mod=forumdisplay&fid=$favfid">$fdata[0]</a>
+				<!--{/if}-->
+			</dd>
+		<!--{/loop}-->
+	</dl>
+<!--{else}-->
+    <div class="hd" style="font-size: 18px;border-bottom: 1px solid #a9b1c9;padding-bottom: 10px">
+        <span>功能板块</span>
+    </div>
+<!--{/if}-->
+<!--功能板块循环-->
+<!--{loop $leftside['forums'] $upfid $gdata}-->
+        <ul>
+        <!--{loop $gdata['sub'] $subfid $name}-->
+            <li{if $_G['fid'] == $subfid || $_G['forum']['fup'] == $subfid} class="bdl_a"{/if}>
+                <!--{if !empty($_G['cache']['forums'][$subfid]['domain']) && !empty($_G['setting']['domain']['root']['forum'])}-->
+                    <a href="http://{$_G['cache']['forums'][$subfid]['domain']}.{$_G['setting']['domain']['root']['forum']}" title="$name">$name</a>
+                <!--{else}-->
+                    <!--<img src="" width="90px" height="90px" >-->
+            <div class="xiaob_left">
+                <img src="template/dean_tech_150528/images/lt_ziliao.jpg" alt=""/>
+            </div>
+            <div class="xiaob_right">
+                <h3>  <a href="forum.php?mod=forumdisplay&fid=$subfid" title="$name">$name</a></h3>
+                <p style="color: #82838d;margin-top: 10px">帖子总数：
+                    <span style="color: #e13d30;">$threads</span></p>
+                <p style="color: #82838d">今日新帖：
+                    <span style="color: #e13d30;">$todayposts</span></p>
+            </div>
+                <!--{/if}-->
+            </li>
+        <!--{/loop}-->
+        </ul>
+<!--{/loop}-->

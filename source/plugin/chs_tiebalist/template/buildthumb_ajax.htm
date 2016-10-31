@@ -1,0 +1,43 @@
+<script type="text/javascript" language="javascript" src="./source/plugin/chs_tiebalist/template/js/jquery.min-143.js"></script>
+<script type="text/javascript">
+var chs={};
+chs.jquery = jQuery.noConflict(true);
+var fid={$fid};
+var starttime='{$starttime1}';
+var endtime='{$endtime1}';
+var pertask={$pertask};
+var allthread={$allthread};
+var tasks={$tasks};
+var inx=0;
+var complete=0;
+
+for(;inx<tasks;inx++) task();
+function task()
+{
+	chs.jquery.ajax({
+		url : 'plugin.php?id=chs_tiebalist:eachbuildthumb',
+		data:{
+			'fid':fid,
+			'starttime':starttime,
+			'endtime':endtime,
+			'index':inx,
+			'pertask':pertask,
+			'allthread':allthread,
+            'hashkey':'{FORMHASH}'
+		},
+		type:'POST',
+		success : function(data)
+		{		
+			complete=complete+1;
+			chs.jquery('#message').append('<p>{lang chs_tiebalist:finish}'+Math.round(complete*100/tasks)+'%.</p>');	
+			if (complete==tasks) 
+			{
+				chs.jquery('#message').append('<p>{lang chs_tiebalist:completed}</p>');
+				chs.jquery('#message').append("<p><a href='admin.php?action=plugins&identifier=chs_tiebalist&pmod=buildthumb'>{lang chs_tiebalist:return}</a></p>");
+			}
+		}
+	});	
+}
+</script>
+<p>{lang chs_tiebalist:beginingcreatethumb}</p>
+<div id="message"></div>

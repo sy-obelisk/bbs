@@ -1,0 +1,420 @@
+/*body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,figure,figcaption{*/
+/*font-family: 微软雅黑,"Microsoft YaHei",\u9ed1\u4f53,黑体,SimHei;*/
+/*margin:0;padding:0;*/
+/*}*/
+/*strong{font-weight: normal;}*/
+img{border: none;vertical-align: middle;max-width: 100%;}
+/*html { height: 100%; width: 100%; outline: 0; -webkit-text-size-adjust:none;}*/
+/*body {background: #ffffff;min-width: 1200px;}*/
+/*-webkit-user-select: none;  webkit内核禁止文本选择*/
+table{ border-collapse:collapse;}
+/*span,b,em{font-weight: normal;font-style: normal;}*/
+input{outline: none;}
+input[type=radio]{-webkit-appearance: radio;} input[type=checkbox]{-webkit-appearance: checkbox;}
+/*a{text-decoration: none;color: #444444;}*/
+/*ul{list-style-type: none;margin: 0;padding: 0;}*/
+*{-webkit-tap-highlight-color: transparent; -webkit-appearance: none;}
+.clearfix:after{content:"";display:block;clear:both;overflow:hidden;visibility:visible;width:0;height:0;}
+.float-l{float: left;}
+.fr{float: right;}
+.tm{text-align: center;}
+.tl{text-align: left;}
+.tr{text-align: right;}
+.inb{display: inline-block;vertical-align: middle;}
+.tb{display: table-cell;width: 50%;}
+.relative{position: relative;}
+.ani{position: absolute}
+.ellipsis {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.ellipsis-2{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+
+.greyNav{
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    background: #3d3d3d;
+}
+.inGrey{
+    width: 1178px;
+    margin: 0 auto;
+}
+.leftNav{
+    float: left;
+}
+.leftNav ul li{
+    float: left;
+    font-size: 14px;
+}
+.leftNav ul li:first-child{
+    margin-right: 13px;
+}
+.leftNav ul li img{
+    vertical-align: middle;
+}
+.leftNav ul li a{
+    height: 100%;
+    display: block;
+    color: #dadada;
+    padding: 0 10px;
+}
+.leftNav ul li a.on{
+    background: #ffffff;
+    color: #787878;
+}
+.leftNav ul li:nth-child(6){
+    color: #676767;
+    margin-left: 20px;
+    margin-right: 16px;
+}
+.leftNav ul li:nth-child(7){
+    color: #e5e5e5;
+    margin-right: 8px;
+}
+.leftNav ul li:last-child a{
+    width: 67px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    display: block;
+    color: #000000;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 0!important;
+    background: -moz-linear-gradient(#f2f2f2, #f2f2f2, #d3d3d3, #e2e2e2);
+    background: -webkit-linear-gradient(#f2f2f2, #f2f2f2, #d3d3d3, #e2e2e2);
+    background: -ms-linear-gradient(#f2f2f2, #f2f2f2, #d3d3d3, #e2e2e2);
+    background: -o-linear-gradient(#f2f2f2, #f2f2f2, #d3d3d3, #e2e2e2);
+}
+.rightLogin{
+    /*display: none;*/
+    float: right;
+    position: relative;
+}
+.loginBefore{
+    /*display: none;*/
+}
+.loginBefore input{
+    width: 74px;
+    height: 26px;
+    border: 1px #fdfdfd solid;
+    border-radius: 3px;
+    color: #f0f0f0;
+    font-size: 14px;
+    line-height: normal;
+    background: none;
+}
+.loginBefore input:first-child{
+    margin-right: 8px;
+}
+.loginAfter{
+    /*display: none;*/
+    position: relative;
+    height: 100%;
+    background: #04a4ea;
+    padding: 0 8px 0 15px;
+    color: white;
+}
+.whiteDiv{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    background: #ffffff;
+    margin-top: 8px;
+}
+.whiteDiv img{
+    width: 100%;
+}
+.leftFont{
+    float: left;
+    font-size: 12px;
+    margin-left: 8px;
+}
+.clearB{
+    clear: both
+}
+.rightLogin:hover .xiala-con{
+    display: block;
+}
+
+.xiala-con{
+    width: 100%;
+    border: 1px #c1c1c1 solid;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    z-index: 1100;
+    background: white;
+    display: none;
+}
+.xiala-con ul li{
+    width: 100%;
+    border-bottom: 1px #c1c1c1 solid;
+}
+.xiala-con ul li a{
+    width: 100%;
+    display: block;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.xiala-con ul li:last-child{
+    border-bottom: none;
+}
+
+.xiala-con ul li:hover a{
+    background: #ffeddb;
+    color: #f59f44;
+}
+.whiteNav{
+    width: 100%;
+    background: white;
+    padding-top: 22px;
+    padding-bottom: 20px;
+}
+.navBox{
+    width: 1178px;
+    margin: 0 auto;
+}
+.logoBox{
+    float: left;
+}
+.rightNav{
+    float: left;
+}
+.rightNav ul li{
+    float: left;
+    padding: 0 15px;
+    font-size: 16px;
+}
+.rightNav ul li:first-child{
+    margin-left: 10px;
+}
+.rightNav ul li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #727272;
+}
+.rightNav ul li.on a{
+    color: #04a4ea;
+}
+.nav-de{
+    margin-left: 60px;
+    color: #ffffff;
+    font-size: 14px;
+    border: none;
+    border-top: none;
+    background: none;
+}
+/*---------------*/
+/*----------导航栏------------*/
+.nav_list {
+    padding: 15px 0;
+    height: 40px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.nav_bar {
+    margin-top: 2px;
+    vertical-align: text-top!important;
+
+}
+.logo_wrap {
+    margin-top: 8px;
+    margin-right: 15px;
+}
+
+.nav_bar li.bar-li {
+    position: relative;
+    padding: 0 10px;
+    float: left;
+}
+
+.nav_bar li a {
+    color: #4a4a4a;
+    line-height: 31px;
+    font-size: 16px;
+}
+
+.nav_bar li:hover .nav2-wrap {
+    display: block;
+}
+
+.nav_bar li a:hover {
+    color: #02A3EA;
+}
+
+.nav_bar li.on a {
+    color: #02A3EA;
+}
+
+.nav_bar li a.on {
+    color: #02A3EA;
+}
+
+.search-wrap {
+    margin-top: 2px;
+    font-size: 0;
+    height: 33px;
+    border: 1px solid #02A3EA;
+}
+
+.search_int {
+    vertical-align: middle;
+    outline: none;
+    padding: 0 10px;
+    width: 155px;
+    height: 32px;
+    border: none;
+}
+
+.search_btn {
+    background: #02A3EA;
+    width: 48px;
+    height: 33px;
+    line-height: 34px;
+}
+
+.nav2-wrap {
+    z-index: 99;
+    display: none;
+    position: absolute;
+    left: 0;
+    /*width: 100%;*/
+    top: 25px;
+    padding: 18px 5px 0;
+    background: url("../deancss/crow-6.png")no-repeat 24px 13px;
+}
+
+.nav2-list {
+    min-width: 100px;
+    border-top: 2px solid #00a3eb;
+    background: #ffffff;
+}
+
+.nav2-list li {
+    text-align: left;
+    float: none;
+    margin: 0 7px;
+    padding: 0;
+    border-bottom: 1px dashed #cccccc;
+}
+
+.nav2-list li:last-child {
+    border-bottom: none;
+}
+
+.nav2-list li a {
+    padding-left: 10px;
+    line-height: 38px;
+}
+
+/*app下载*/
+.appDownload{
+    float: right;
+    height: 100%;
+    padding: 0 30px;
+    position: relative;
+    margin-right: 10px;
+}
+.appDownload:hover{
+    cursor: pointer;
+    background: #f3f7f7;
+}
+.appDownload:hover span.tit_t{
+    color: #000000;
+}
+.appDownload:hover span.tit_t b{
+    border-top: 5px #000000 solid;
+}
+.appDownload span.tit_t{
+    color: white;
+}
+.appDownload span.tit_t b{
+    width: 0;
+    height: 0;
+    display:inline-block;
+    border-top: 5px white solid;
+    border-left: 5px transparent solid;
+    border-right: 5px transparent solid;
+}
+.appDownload:hover .pull_down{
+    display: block;
+}
+.pull_down{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    z-index: 1100;
+    background: #f3f7f7;
+    display: none;
+}
+.pull_down ul li{
+    position: relative;
+}
+.pull_down ul li:hover .code_box{
+    display: block;
+}
+.pull_down ul li:hover{
+    background: #3e3e3e;
+    color: white;
+}
+.first_layer{
+    font-size: 12px;
+}
+.first_layer img{
+    width: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.code_box{
+    position: absolute;
+    right: -70px;
+    top: 0;
+    display: none;
+}
+.code_box img{
+    width: 70px;
+}
+/*app end*/
+.deaninfo{
+    float: right;
+}
+.deanhove{
+    width: 20px;
+    height: 42px;
+    background: url(../deancss/seticon1.png) center center no-repeat;
+    cursor: pointer;
+}
+
+.deanhoved {
+    background: #4ebaf2 url(../deancss/seticon.png) center center no-repeat;
+}
+.deanmessage {
+    width: 172px;
+    background: #4ebaf2;
+    padding: 10px;
+    padding-top: 0;
+    position: absolute;
+    top: 40px;
+    left: -163px;
+    z-index: 9;
+    display: none;
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+}
