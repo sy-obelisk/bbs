@@ -239,4 +239,37 @@ class gmat_class {
             die(json_encode(['code' => 0]));
         }
     }
+
+    function unifyLogin() {
+        global $_G;
+
+        if(!API_SYNLOGIN) {
+            return API_RETURN_FORBIDDEN;
+        }
+        header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
+
+        $cookietime = 31536000;
+        $uid = intval($_GET['uid']);
+        if(($member = getuserbyuid($uid, 1))) {
+            dsetcookie('auth', authcode("$member[password]\t$member[uid]", 'ENCODE'), $cookietime);
+        }else {
+            if(!function_exists('uc_get_user')) {
+                loaducenter();
+            }
+            $user = uc_get_user($uid, 1);
+            if($user) {
+                $time = time();
+                DB::query("REPLACE INTO ".DB::table('common_member')." SET `uid`='{$user[0]}' , `username`='{$user[1]}' , `password`='".md5(random(10))."' , `email`='{$user[2]}' , `adminid`='0' , `groupid`='10' , `regdate`='{$time}' , `emailstatus`='0' , `credits`='0' , `timeoffset`='9999'");
+                DB::query("REPLACE INTO ".DB::table('common_member_status')." SET `uid`='{$user[0]}' , `regip`='{$_G['clientip']}' , `lastip`='{$_G['clientip']}' , `lastvisit`='{$time}' , `lastactivity`='' , `lastpost`='0' , `lastsendmail`='0'");
+                DB::query("REPLACE INTO ".DB::table('common_member_count')." SET `uid`='{$user[0]}' , `extcredits1`='0' , `extcredits2`='0' , `extcredits3`='0' , `extcredits4`='0' , `extcredits5`='0' , `extcredits6`='0' , `extcredits7`='0' , `extcredits8`='0'");
+                DB::query("REPLACE INTO ".DB::table('common_member_profile')." SET `uid`='{$user[0]}'");
+                DB::query("REPLACE INTO ".DB::table('common_member_field_forum')." SET `uid`='{$user[0]}'");
+                DB::query("REPLACE INTO ".DB::table('common_member_field_home')." SET `uid`='{$user[0]}'");
+                DB::query("UPDATE ".DB::table('common_stat')." SET `register`=`register`+1 WHERE `daytime` = '".date('Ymd', $time)."'");
+                if(($member = getuserbyuid($uid, 1))) {
+                    dsetcookie('auth', authcode("$member[password]\t$member[uid]", 'ENCODE'), $cookietime);
+                }
+            }
+        }
+    }
 }
