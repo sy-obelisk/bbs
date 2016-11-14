@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('register');
 0
-|| checktplrefresh('./template/default/member/register.htm', './template/default/common/seccheck.htm', 1445828658, '2', './data/template/2_2_member_register.tpl.php', './template/dean_tech_150528', 'member/register')
+|| checktplrefresh('./template/default/member/register.htm', './template/dean_tech_150528/common/seccheck.htm', 1478483682, '2', './data/template/2_2_member_register.tpl.php', './template/dean_tech_150528', 'member/register')
 ;?><?php include template('common/header'); ?><script type="text/javascript">
 var strongpw = new Array();
 <?php if($_G['setting']['strongpw']) { if(is_array($_G['setting']['strongpw'])) foreach($_G['setting']['strongpw'] as $key => $val) { ?>strongpw[<?php echo $key;?>] = <?php echo $val;?>;

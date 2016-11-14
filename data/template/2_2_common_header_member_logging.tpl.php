@@ -1,7 +1,7 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); 
 0
-|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_common.htm', 1474859711, '2', './data/template/2_2_common_header_member_logging.tpl.php', './template/dean_tech_150528', 'common/header_member_logging')
-|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_qmenu.htm', 1474859711, '2', './data/template/2_2_common_header_member_logging.tpl.php', './template/dean_tech_150528', 'common/header_member_logging')
+|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_common.htm', 1478483587, '2', './data/template/2_2_common_header_member_logging.tpl.php', './template/dean_tech_150528', 'common/header_member_logging')
+|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_qmenu.htm', 1478483587, '2', './data/template/2_2_common_header_member_logging.tpl.php', './template/dean_tech_150528', 'common/header_member_logging')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

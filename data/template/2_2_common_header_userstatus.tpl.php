@@ -58,8 +58,8 @@
 <div class="rightLogin">
     <!--未登陆显示-->
     <div class="loginBefore">
-        <a href="member.php?mod=logging&amp;action=login" target="_blank"  class="deanlogin"><input type="button" value="登陆"></a>
-        <a href="member.php?mod=<?php echo $_G['setting']['regname'];?>" target="_blank" class="deanregister"><input type="button" value="注册" ></a>
+        <a href="http://login.gmatonline.cn/cn/index?source=5&amp;url=http://bbs.gmatonline.cn"  class="deanlogin"><input type="button" value="登陆"></a>
+        <a href="http://login.gmatonline.cn/cn/index/register?source=5&amp;url=http://bbs.gmatonline.cn" class="deanregister"><input type="button" value="注册" ></a>
     </div>
 </div>
 
