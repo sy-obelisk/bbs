@@ -149,7 +149,7 @@
                 <li><a href="http://toefl.gmatonline.cn/">TOEFL</a></li>
                 <li><a href="http://ielts.gmatonline.cn/">IELTS</a></li>
                 <li><a href="http://smartapply.gmatonline.cn/">留学</a></li>
-                <li><a href="http://smartapply.viplgw.cn/public-class.html">公开课</a></li>
+                <li><a href="http://smartapply.gmatonline.cn /public-class.html">公开课</a></li>
                 <li>|</li>
                 <li><span>400-1816-180</span></li>
                 <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1746295647&amp;site=qq&amp;menu=yes">在线咨询</a>
