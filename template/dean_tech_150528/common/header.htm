@@ -1,16 +1,23 @@
 <!--{subtemplate common/header_common}-->
-<meta name="application-name" content="$_G['setting']['bbname']" />
-<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
-<!--{if $_G['setting']['portalstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" /><!--{/if}-->
-<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
-<!--{if $_G['setting']['groupstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" /><!--{/if}-->
-<!--{if helper_access::check_module('feed')}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" /><!--{/if}-->
+<meta name="application-name" content="$_G['setting']['bbname']"/>
+<meta name="msapplication-tooltip" content="$_G['setting']['bbname']"/>
+<!--{if $_G['setting']['portalstatus']}-->
+<meta name="msapplication-task"
+      content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico"/><!--{/if}-->
+<meta name="msapplication-task"
+      content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico"/>
+<!--{if $_G['setting']['groupstatus']}-->
+<meta name="msapplication-task"
+      content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico"/><!--{/if}-->
+<!--{if helper_access::check_module('feed')}-->
+<meta name="msapplication-task"
+      content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico"/><!--{/if}-->
 <!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
-<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/"/>
 <!--{/if}-->
 <!--{if !empty($rsshead)}-->$rsshead<!--{/if}-->
 <!--{if widthauto()}-->
-<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}"/>
 <script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
 <!--{/if}-->
 <!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
@@ -24,11 +31,10 @@
 <script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
 <!--{/if}-->
 <!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
-<link rel="stylesheet"  type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}"/>
 <!--{/if}-->
 
-<!--申友-->
-<!--自己写的css-->
+<link rel="stylesheet" href="template/dean_tech_150528/common/animate.min.css"/>
 <link rel="stylesheet" href="template/dean_tech_150528/common/my_style.css"/>
 <!--<script charset="utf-8" src="template/dean_tech_150528/js/lxb.js"></script>-->
 <link href="template/dean_tech_150528/common/header.css" rel="stylesheet">
@@ -56,7 +62,7 @@
 
 <script type="text/javascript" src="$_G['style'][styleimgdir]/jquery.js"></script>
 <script type="text/javascript">
-    var jq=jQuery.noConflict();
+    var jq = jQuery.noConflict();
 </script>
 
 <script language="javascript" type="text/javascript">
@@ -67,8 +73,11 @@
 </script>
 </head>
 
-<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
-<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<body id="nv_{$_G[basescript]}"
+      class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}"
+      onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
 <!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
 <!--{template common/header_diy}-->
 <!--{/if}-->
@@ -81,34 +90,39 @@ $diynav
 <!--{if empty($topic) || $topic['useheader']}-->
 <!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
 <div class="xi1 bm bm_c">
-    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
+    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span
+        class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
 </div>
 <!--{/if}-->
 <!--{if $_G['setting']['shortcut'] && $_G['member'][credits] >= $_G['setting']['shortcut']}-->
 <!--<div id="shortcut">-->
-    <!--<span><a href="javascript:;" id="shortcutcloseid" title="{lang close}">{lang close}</a></span>-->
-    <!--{lang shortcut_notice}-->
-    <!--<a href="javascript:;" id="shortcuttip">{lang shortcut_add}</a>-->
+<!--<span><a href="javascript:;" id="shortcutcloseid" title="{lang close}">{lang close}</a></span>-->
+<!--{lang shortcut_notice}-->
+<!--<a href="javascript:;" id="shortcuttip">{lang shortcut_add}</a>-->
 
 <!--</div>-->
 <script type="text/javascript">setTimeout(setShortcut, 2000);</script>
 <!--{/if}-->
 <!--下面是DIY的div style="display: none;"-->
 <div id="toptb" class="cl" style="display: none;">
-<!--{hook/global_cpnav_top}-->
-<div class="wp">
-<div class="y">
-<a id="switchblind" href="javascript:;" onClick="toggleBlind(this)" title="{lang switch_blind}" class="switchblind">{lang switch_blind}</a>
-<!--{hook/global_cpnav_extra2}-->
-<!--{loop $_G['setting']['topnavs'][1] $nav}-->
-<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
-<!--{/loop}-->
-<!--{if !empty($_G['style']['extstyle'])}--><a id="sslct" href="javascript:;" onMouseOver="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}</a><!--{/if}-->
-<!--{if check_diy_perm($topic)}-->
-$diynav
-<!--{/if}-->
-</div>
-</div>
+    <!--{hook/global_cpnav_top}-->
+    <div class="wp">
+        <div class="y">
+            <a id="switchblind" href="javascript:;" onClick="toggleBlind(this)" title="{lang switch_blind}"
+               class="switchblind">{lang switch_blind}</a>
+            <!--{hook/global_cpnav_extra2}-->
+            <!--{loop $_G['setting']['topnavs'][1] $nav}-->
+            <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->
+            $nav[code]<!--{/if}-->
+            <!--{/loop}-->
+            <!--{if !empty($_G['style']['extstyle'])}--><a id="sslct" href="javascript:;"
+                                                           onMouseOver="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang
+            changestyle}</a><!--{/if}-->
+            <!--{if check_diy_perm($topic)}-->
+            $diynav
+            <!--{/if}-->
+        </div>
+    </div>
 </div>
 
 
@@ -124,9 +138,11 @@ $diynav
                 <li><a href="http://toefl.gmatonline.cn/">TOEFL</a></li>
                 <li><a href="http://ielts.gmatonline.cn/">IELTS</a></li>
                 <li><a href="http://smartapply.gmatonline.cn/">留学</a></li>
+                <li><a href="http://smartapply.viplgw.cn/public-class.html">公开课</a></li>
                 <li>|</li>
                 <li><span>400-1816-180</span></li>
-                <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1746295647&amp;site=qq&amp;menu=yes">在线咨询</a></li>
+                <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1746295647&amp;site=qq&amp;menu=yes">在线咨询</a>
+                </li>
             </ul>
         </div>
         <div class="float-l nav-de">互联网一站式GMAT备考平台</div>
@@ -135,26 +151,42 @@ $diynav
         <!--        app下载-->
         <div class="appDownload">
             <span title="app下载" class="tit_t">APP <b></b></span>
-            <div class="pull_down">
+            <div class="pull_down" style="width: 140px;">
                 <ul>
                     <li>
-                        <div class="first_layer">
-                            <img src="template/dean_tech_150528/images/gmatapp_logo.jpg" alt="app logo图标"/>
-                            <span>雷哥GMAT</span>
-                        </div>
+                        <a href="http://www.gmatonline.cn/DownloadApp.html">
+                            <div class="first_layer">
+                                <img src="template/dean_tech_150528/images/gmatapp_logo.jpg" alt="app logo图标"/>
+                                <span>雷哥GMAT苹果版</span>
+                            </div>
+                        </a>
                         <div class="code_box">
                             <img src="template/dean_tech_150528/images/leigeQrCode.png" alt="app二维码图片"/>
                         </div>
                     </li>
                     <li>
-                        <div class="first_layer">
-                            <img src="template/dean_tech_150528/images/toeflapp_logo.jpg" alt="app logo图标"/>
-                            <span>雷哥托福</span>
+                        <a href="http://www.gmatonline.cn/DownloadApp.html">
+                            <div class="first_layer">
+                                <img src="template/dean_tech_150528/images/gmatapp_logo.jpg" alt="app logo图标"/>
+                                <span>雷哥GMAT安卓版</span>
+                            </div>
+                        </a>
+                        <div class="code_box">
+                            <img src="template/dean_tech_150528/images/leigeQrCode.png" alt="app二维码图片"/>
                         </div>
+                    </li>
+                    <li>
+                        <a href="http://www.gmatonline.cn/DownloadApp.html">
+                            <div class="first_layer">
+                                <img src="template/dean_tech_150528/images/toeflapp_logo.jpg" alt="app logo图标"/>
+                                <span>雷哥托福苹果版</span>
+                            </div>
+                        </a>
                         <div class="code_box">
                             <img src="template/dean_tech_150528/images/toeflQrCode.jpg" alt="app二维码图片"/>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -164,26 +196,31 @@ $diynav
 </div>
 
 <!--<div class="nav2_fl fl">-->
-    <!--<div class="relative logo_wrap inb">-->
-        <!--<a href="/index.html">-->
-            <!--<img src="/app/web_core/styles//app/web_core/styles/images-3/logo_3.png" alt="logo_图标">-->
-        <!--</a>-->
-    <!--</div>-->
-   <!---->
+<!--<div class="relative logo_wrap inb">-->
+<!--<a href="/index.html">-->
+<!--<img src="/app/web_core/styles//app/web_core/styles/images-3/logo_3.png" alt="logo_图标">-->
+<!--</a>-->
+<!--</div>-->
+<!---->
 <!--</div>-->
 <div class="deanheader" id="deanheader">
     <div class="nav_list tl clearfix">
 
         <!--logo 图标-->
         <div class="relative logo_wrap inb">
-            <h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
+            <h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a
+                    href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}"
+                    title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->
+                $_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
             <!--<span></span>-->
             <div class="clear"></div>
         </div>
         <ul class="inb tm nav_bar clearfix">
             <li class="bar-li"><a href="http://www.gmatonline.cn/index.html">首页</a></li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/practise/index.html">做题模考 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
+                <a href="http://www.gmatonline.cn/practise/index.html">做题模考 <img class="crow-1"
+                                                                                 src="template/dean_tech_150528/images/crow-1.png"
+                                                                                 alt=""></a>
                 <div class="nav2-wrap">
                     <ul class="nav2-list">
                         <li><a href="http://www.gmatonline.cn/question/">题库</a></li>
@@ -196,7 +233,9 @@ $diynav
 
             </li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/analyze">GMAT报告 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
+                <a href="http://www.gmatonline.cn/analyze">GMAT报告 <img class="crow-1"
+                                                                       src="template/dean_tech_150528/images/crow-1.png"
+                                                                       alt=""></a>
                 <div class="nav2-wrap" style="width: 170px">
                     <ul class="nav2-list">
                         <li><a href="http://www.gmatonline.cn/analyze">Complete Report</a></li>
@@ -208,17 +247,23 @@ $diynav
                 </div>
             </li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/gmatcourses/index.html">GMAT课程 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
-                <div class="nav2-wrap">
+                <a href="http://www.gmatonline.cn/gmatcourses/index.html">GMAT课程 <img class="crow-1"
+                                                                                      src="template/dean_tech_150528/images/crow-1.png"
+                                                                                      alt=""></a>
+                <div class="nav2-wrap" style="width: 140px;">
                     <ul class="nav2-list">
-                        <li><a href="http://smartapply.gmatonline.cn/public-class.html">公开课</a></li>
-                        <li><a href="http://www.gmatonline.cn/gmatcourses/index.html">直播课程</a></li>
-                        <li><a href="http://www.gmatonline.cn/video.html">视频课程</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmatbeginner.html">GMAT零基础</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmat600.html">考过600以下</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmat700.html">考过700以下</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmatcourses/index.html">实时直播课程</a></li>
+                        <li><a href="http://www.gmatonline.cn/video.html">名师视频课程</a></li>
                     </ul>
                 </div>
             </li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/beikao/index.html">GMAT资讯 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
+                <a href="http://www.gmatonline.cn/beikao/index.html">GMAT资讯 <img class="crow-1"
+                                                                                 src="template/dean_tech_150528/images/crow-1.png"
+                                                                                 alt=""></a>
                 <div class="nav2-wrap" style="width: 150px;">
                     <ul class="nav2-list">
                         <li><a href="http://www.gmatonline.cn/beikao/index.html">GMAT备考</a></li>
@@ -249,28 +294,38 @@ $diynav
 <!--{if !IS_ROBOT}-->
 <!--{if $_G['uid']}-->
 <ul id="myprompt_menu" class="p_pop" style="display: none;">
-    <li><a href="home.php?mod=space&do=pm" id="pm_ntc" style="background-repeat: no-repeat; background-position: 0 50%;"><em class="prompt_news{if empty($_G[member][newpm])}_0{/if}"></em>{lang pm_center}</a></li>
+    <li><a href="home.php?mod=space&do=pm" id="pm_ntc"
+           style="background-repeat: no-repeat; background-position: 0 50%;"><em
+            class="prompt_news{if empty($_G[member][newpm])}_0{/if}"></em>{lang pm_center}</a></li>
 
-    <li><a href="home.php?mod=follow&do=follower"><em class="prompt_follower{if empty($_G[member][newprompt_num][follower])}_0{/if}"></em><!--{lang notice_interactive_follower}-->{if $_G[member][newprompt_num][follower]}($_G[member][newprompt_num][follower]){/if}</a></li>
+    <li><a href="home.php?mod=follow&do=follower"><em
+            class="prompt_follower{if empty($_G[member][newprompt_num][follower])}_0{/if}"></em>
+        <!--{lang notice_interactive_follower}-->{if
+        $_G[member][newprompt_num][follower]}($_G[member][newprompt_num][follower]){/if}</a></li>
 
     <!--{if $_G[member][newprompt] && $_G[member][newprompt_num][follow]}-->
-    <li><a href="home.php?mod=follow"><em class="prompt_concern"></em><!--{lang notice_interactive_follow}-->($_G[member][newprompt_num][follow])</a></li>
+    <li><a href="home.php?mod=follow"><em class="prompt_concern"></em><!--{lang notice_interactive_follow}-->
+        ($_G[member][newprompt_num][follow])</a></li>
     <!--{/if}-->
     <!--{if $_G[member][newprompt]}-->
     <!--{loop $_G['member']['category_num'] $key $val}-->
-    <li><a href="home.php?mod=space&do=notice&view=$key"><em class="notice_$key"></em><!--{echo lang('template', 'notice_'.$key)}-->(<span class="rq">$val</span>)</a></li>
+    <li><a href="home.php?mod=space&do=notice&view=$key"><em class="notice_$key"></em>
+        <!--{echo lang('template', 'notice_'.$key)}-->(<span class="rq">$val</span>)</a></li>
     <!--{/loop}-->
     <!--{/if}-->
     <!--{if empty($_G['cookie']['ignore_notice'])}-->
-    <li class="ignore_noticeli"><a href="javascript:;" onClick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')" title="{lang temporarily_to_remind}"><em class="ignore_notice"></em></a></li>
+    <li class="ignore_noticeli"><a href="javascript:;" onClick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')"
+                                   title="{lang temporarily_to_remind}"><em class="ignore_notice"></em></a></li>
     <!--{/if}-->
 </ul>
 <!--{/if}-->
 <!--{if !empty($_G['style']['extstyle'])}-->
 <div id="sslct_menu" class="cl p_pop" style="display: none;">
-    <!--{if !$_G[style][defaultextstyle]}--><span class="sslct_btn" onClick="extstyle('')" title="{lang default}"><i></i></span><!--{/if}-->
+    <!--{if !$_G[style][defaultextstyle]}--><span class="sslct_btn" onClick="extstyle('')"
+                                                  title="{lang default}"><i></i></span><!--{/if}-->
     <!--{loop $_G['style']['extstyle'] $extstyle}-->
-    <span class="sslct_btn" onClick="extstyle('$extstyle[0]')" title="$extstyle[1]"><i style='background:$extstyle[2]'></i></span>
+    <span class="sslct_btn" onClick="extstyle('$extstyle[0]')" title="$extstyle[1]"><i
+            style='background:$extstyle[2]'></i></span>
     <!--{/loop}-->
 </div>
 <!--{/if}-->
@@ -278,8 +333,6 @@ $diynav
 <!--{/if}-->
 
 <!--{ad/headerbanner/wp a_h}-->
-
-
 
 
 <div class="clear"></div>
@@ -329,11 +382,11 @@ $diynav
         var xs_userName = xst.user.info.username || '憨憨熊';
         topUserInfo();
         $.ajax({
-            type:"get",
-            url:xs_userInfoUrl,
-            dataType:"jsonp",
-            jsonp:"callback",
-            success:function (data) {
+            type: "get",
+            url: xs_userInfoUrl,
+            dataType: "jsonp",
+            jsonp: "callback",
+            success: function (data) {
                 if (data) {
                     topUserInfo(data);
                 }
@@ -400,7 +453,7 @@ $diynav
                 return false;
             }
             var data = {
-                q:val
+                q: val
             };
             if (top_search_kw == val) {
                 topSearchShow(top_search_cache, $input);
@@ -410,11 +463,11 @@ $diynav
 
             if (top_search_ajax) top_search_ajax.abort();
             top_search_ajax = $.ajax({
-                url:top_search_url,
-                type:'get',
-                dataType:'jsonp',
-                data:data,
-                success:function (res) {
+                url: top_search_url,
+                type: 'get',
+                dataType: 'jsonp',
+                data: data,
+                success: function (res) {
                     top_search_ajax = null;
                     var htm = topSearchResult(res);
                     top_search_cache = htm;
@@ -440,14 +493,14 @@ $diynav
                 for (i = 0; i < data['course']['result'].length; i++) {
                     var val = data['course']['result'][i];
                     course += '<li><a href="' + xs_www + '/course/' + val.id + '"  target="_blank"><div class="pic"><img src="' + val.imageUrl + '" alt="' + val.name + '" title="' + val.name + '"> </div>' +
-                    '<div class="cont"><p>' + val.name + '</p><p class="info"><span>主讲老师：' + val.teacher.name + ' </span><span>' + val.virtualStudentCount + '人在学</span></p></div></a></li>';
+                            '<div class="cont"><p>' + val.name + '</p><p class="info"><span>主讲老师：' + val.teacher.name + ' </span><span>' + val.virtualStudentCount + '人在学</span></p></div></a></li>';
                 }
             }
             if (data['user'] && data['user']['result'].length) {
                 for (i = 0; i < data['user']['result'].length; i++) {
                     var val = data['user']['result'][i];
                     user += '<li> <a href="' + xs_www + '/home/' + val.id + '"  target="_blank"><div class="pic"><img src="' + val.avatar + '" alt="' + val.username + '" title="' + val.username + '"></div>' +
-                    '<div class="cont"><p>' + val.username + '</p><p class="info"><span>发贴：' + val.postCount + ' </span><span>帅气值：' + val.shuaiqi + ' </span><span>被赞：' + val.praise + '</span></p></div></a></li>';
+                            '<div class="cont"><p>' + val.username + '</p><p class="info"><span>发贴：' + val.postCount + ' </span><span>帅气值：' + val.shuaiqi + ' </span><span>被赞：' + val.praise + '</span></p></div></a></li>';
                 }
             }
 

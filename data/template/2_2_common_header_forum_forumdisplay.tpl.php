@@ -1,7 +1,7 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); 
 0
-|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_common.htm', 1478483412, '2', './data/template/2_2_common_header_forum_forumdisplay.tpl.php', './template/dean_tech_150528', 'common/header_forum_forumdisplay')
-|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_qmenu.htm', 1478483412, '2', './data/template/2_2_common_header_forum_forumdisplay.tpl.php', './template/dean_tech_150528', 'common/header_forum_forumdisplay')
+|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_common.htm', 1486521131, '2', './data/template/2_2_common_header_forum_forumdisplay.tpl.php', './template/dean_tech_150528', 'common/header_forum_forumdisplay')
+|| checktplrefresh('./template/dean_tech_150528/common/header.htm', './template/dean_tech_150528/common/header_qmenu.htm', 1486521131, '2', './data/template/2_2_common_header_forum_forumdisplay.tpl.php', './template/dean_tech_150528', 'common/header_forum_forumdisplay')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,14 +28,21 @@
     <script src="<?php echo $_G['setting']['jspath'];?>common.js?<?php echo VERHASH;?>" type="text/javascript"></script>
     <?php if(empty($_GET['diy'])) { $_GET['diy'] = '';?><?php } ?>
     <?php if(!isset($topic)) { $topic = array();?><?php } ?>
-<meta name="application-name" content="<?php echo $_G['setting']['bbname'];?>" />
-<meta name="msapplication-tooltip" content="<?php echo $_G['setting']['bbname'];?>" />
-<?php if($_G['setting']['portalstatus']) { ?><meta name="msapplication-task" content="name=<?php echo $_G['setting']['navs']['1']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G['siteurl'].'portal.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/portal.ico" /><?php } ?>
-<meta name="msapplication-task" content="name=<?php echo $_G['setting']['navs']['2']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G['siteurl'].'forum.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/bbs.ico" />
-<?php if($_G['setting']['groupstatus']) { ?><meta name="msapplication-task" content="name=<?php echo $_G['setting']['navs']['3']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G['siteurl'].'group.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/group.ico" /><?php } if(helper_access::check_module('feed')) { ?><meta name="msapplication-task" content="name=<?php echo $_G['setting']['navs']['4']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G['siteurl'].'home.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/home.ico" /><?php } if($_G['basescript'] == 'forum' && $_G['setting']['archiver']) { ?>
-<link rel="archives" title="<?php echo $_G['setting']['bbname'];?>" href="<?php echo $_G['siteurl'];?>archiver/" />
+<meta name="application-name" content="<?php echo $_G['setting']['bbname'];?>"/>
+<meta name="msapplication-tooltip" content="<?php echo $_G['setting']['bbname'];?>"/>
+<?php if($_G['setting']['portalstatus']) { ?>
+<meta name="msapplication-task"
+      content="name=<?php echo $_G['setting']['navs']['1']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G['siteurl'].'portal.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/portal.ico"/><?php } ?>
+<meta name="msapplication-task"
+      content="name=<?php echo $_G['setting']['navs']['2']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G['siteurl'].'forum.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/bbs.ico"/>
+<?php if($_G['setting']['groupstatus']) { ?>
+<meta name="msapplication-task"
+      content="name=<?php echo $_G['setting']['navs']['3']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G['siteurl'].'group.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/group.ico"/><?php } if(helper_access::check_module('feed')) { ?>
+<meta name="msapplication-task"
+      content="name=<?php echo $_G['setting']['navs']['4']['navname'];?>;action-uri=<?php echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G['siteurl'].'home.php'; ?>;icon-uri=<?php echo $_G['siteurl'];?><?php echo IMGDIR;?>/home.ico"/><?php } if($_G['basescript'] == 'forum' && $_G['setting']['archiver']) { ?>
+<link rel="archives" title="<?php echo $_G['setting']['bbname'];?>" href="<?php echo $_G['siteurl'];?>archiver/"/>
 <?php } if(!empty($rsshead)) { ?><?php echo $rsshead;?><?php } if(widthauto()) { ?>
-<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_<?php echo STYLEID;?>_widthauto.css?<?php echo VERHASH;?>" />
+<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_<?php echo STYLEID;?>_widthauto.css?<?php echo VERHASH;?>"/>
 <script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
 <?php } if($_G['basescript'] == 'forum' || $_G['basescript'] == 'group') { ?>
 <script src="<?php echo $_G['setting']['jspath'];?>forum.js?<?php echo VERHASH;?>" type="text/javascript"></script>
@@ -46,11 +53,10 @@
 <?php } if($_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && check_diy_perm($topic)) { ?>
 <script src="<?php echo $_G['setting']['jspath'];?>portal.js?<?php echo VERHASH;?>" type="text/javascript"></script>
 <?php } if($_GET['diy'] == 'yes' && check_diy_perm($topic)) { ?>
-<link rel="stylesheet"  type="text/css" id="diy_common" href="data/cache/style_<?php echo STYLEID;?>_css_diy.css?<?php echo VERHASH;?>" />
+<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_<?php echo STYLEID;?>_css_diy.css?<?php echo VERHASH;?>"/>
 <?php } ?>
 
-<!--申友-->
-<!--自己写的css-->
+<link rel="stylesheet" href="template/dean_tech_150528/common/animate.min.css"/>
 <link rel="stylesheet" href="template/dean_tech_150528/common/my_style.css"/>
 <!--<script src="template/dean_tech_150528/js/lxb.js" type="text/javascript"></script>-->
 <link href="template/dean_tech_150528/common/header.css" rel="stylesheet">
@@ -78,7 +84,7 @@
 
 <script src="<?php echo $_G['style']['styleimgdir'];?>/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-    var jq=jQuery.noConflict();
+    var jq = jQuery.noConflict();
 </script>
 
 <script language="javascript" type="text/javascript">
@@ -89,34 +95,45 @@
 </script>
 </head>
 
-<body id="nv_<?php echo $_G['basescript'];?>" class="pg_<?php echo CURMODULE;?><?php if($_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)) { ?> <?php echo $cat['bodycss'];?><?php } ?>" onkeydown="if(event.keyCode==27) return false;">
-<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<body id="nv_<?php echo $_G['basescript'];?>"
+      class="pg_<?php echo CURMODULE;?><?php if($_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)) { ?> <?php echo $cat['bodycss'];?><?php } ?>"
+      onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
 <?php if($_GET['diy'] == 'yes' && check_diy_perm($topic)) { include template('common/header_diy'); } if(check_diy_perm($topic)) { include template('common/header_diynav'); } if(CURMODULE == 'topic' && $topic && empty($topic['useheader']) && check_diy_perm($topic)) { ?>
 <?php echo $diynav;?>
 <?php } if(empty($topic) || $topic['useheader']) { if($_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')) { ?>
 <div class="xi1 bm bm_c">
-    请选择 <a href="<?php echo $_G['siteurl'];?>forum.php?mobile=yes">进入手机版</a> <span class="xg1">|</span> <a href="<?php echo $_G['setting']['mobile']['nomobileurl'];?>">继续访问电脑版</a>
+    请选择 <a href="<?php echo $_G['siteurl'];?>forum.php?mobile=yes">进入手机版</a> <span
+        class="xg1">|</span> <a href="<?php echo $_G['setting']['mobile']['nomobileurl'];?>">继续访问电脑版</a>
 </div>
 <?php } if($_G['setting']['shortcut'] && $_G['member']['credits'] >= $_G['setting']['shortcut']) { ?>
 <!--<div id="shortcut">-->
-    <!--<span><a href="javascript:;" id="shortcutcloseid" title="关闭">关闭</a></span>-->
-    您经常访问 <?php echo $_G['setting']['bbname'];?>，试试添加到桌面，访问更方便！
-    <!--<a href="javascript:;" id="shortcuttip">添加 <?php echo $_G['setting']['bbname'];?> 到桌面</a>-->
+<!--<span><a href="javascript:;" id="shortcutcloseid" title="关闭">关闭</a></span>-->
+您经常访问 <?php echo $_G['setting']['bbname'];?>，试试添加到桌面，访问更方便！
+<!--<a href="javascript:;" id="shortcuttip">添加 <?php echo $_G['setting']['bbname'];?> 到桌面</a>-->
 
 <!--</div>-->
 <script type="text/javascript">setTimeout(setShortcut, 2000);</script>
 <?php } ?>
 <!--下面是DIY的div style="display: none;"-->
 <div id="toptb" class="cl" style="display: none;">
-<?php if(!empty($_G['setting']['pluginhooks']['global_cpnav_top'])) echo $_G['setting']['pluginhooks']['global_cpnav_top'];?>
-<div class="wp">
-<div class="y">
-<a id="switchblind" href="javascript:;" onClick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a>
-<?php if(!empty($_G['setting']['pluginhooks']['global_cpnav_extra2'])) echo $_G['setting']['pluginhooks']['global_cpnav_extra2'];?><?php if(is_array($_G['setting']['topnavs']['1'])) foreach($_G['setting']['topnavs']['1'] as $nav) { if($nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))) { ?><?php echo $nav['code'];?><?php } } if(!empty($_G['style']['extstyle'])) { ?><a id="sslct" href="javascript:;" onMouseOver="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">切换风格</a><?php } if(check_diy_perm($topic)) { ?>
-<?php echo $diynav;?>
-<?php } ?>
-</div>
-</div>
+    <?php if(!empty($_G['setting']['pluginhooks']['global_cpnav_top'])) echo $_G['setting']['pluginhooks']['global_cpnav_top'];?>
+    <div class="wp">
+        <div class="y">
+            <a id="switchblind" href="javascript:;" onClick="toggleBlind(this)" title="开启辅助访问"
+               class="switchblind">开启辅助访问</a>
+            <?php if(!empty($_G['setting']['pluginhooks']['global_cpnav_extra2'])) echo $_G['setting']['pluginhooks']['global_cpnav_extra2'];?>
+            <?php if(is_array($_G['setting']['topnavs']['1'])) foreach($_G['setting']['topnavs']['1'] as $nav) { ?>            <?php if($nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))) { ?>
+            <?php echo $nav['code'];?><?php } ?>
+            <?php } ?>
+            <?php if(!empty($_G['style']['extstyle'])) { ?><a id="sslct" href="javascript:;"
+                                                           onMouseOver="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">切换风格</a><?php } ?>
+            <?php if(check_diy_perm($topic)) { ?>
+            <?php echo $diynav;?>
+            <?php } ?>
+        </div>
+    </div>
 </div>
 
 
@@ -132,9 +149,11 @@
                 <li><a href="http://toefl.gmatonline.cn/">TOEFL</a></li>
                 <li><a href="http://ielts.gmatonline.cn/">IELTS</a></li>
                 <li><a href="http://smartapply.gmatonline.cn/">留学</a></li>
+                <li><a href="http://smartapply.viplgw.cn/public-class.html">公开课</a></li>
                 <li>|</li>
                 <li><span>400-1816-180</span></li>
-                <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1746295647&amp;site=qq&amp;menu=yes">在线咨询</a></li>
+                <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1746295647&amp;site=qq&amp;menu=yes">在线咨询</a>
+                </li>
             </ul>
         </div>
         <div class="float-l nav-de">互联网一站式GMAT备考平台</div>
@@ -142,26 +161,42 @@
         <?php include template('common/header_userstatus'); ?>        <!--        app下载-->
         <div class="appDownload">
             <span title="app下载" class="tit_t">APP <b></b></span>
-            <div class="pull_down">
+            <div class="pull_down" style="width: 140px;">
                 <ul>
                     <li>
-                        <div class="first_layer">
-                            <img src="template/dean_tech_150528/images/gmatapp_logo.jpg" alt="app logo图标"/>
-                            <span>雷哥GMAT</span>
-                        </div>
+                        <a href="http://www.gmatonline.cn/DownloadApp.html">
+                            <div class="first_layer">
+                                <img src="template/dean_tech_150528/images/gmatapp_logo.jpg" alt="app logo图标"/>
+                                <span>雷哥GMAT苹果版</span>
+                            </div>
+                        </a>
                         <div class="code_box">
                             <img src="template/dean_tech_150528/images/leigeQrCode.png" alt="app二维码图片"/>
                         </div>
                     </li>
                     <li>
-                        <div class="first_layer">
-                            <img src="template/dean_tech_150528/images/toeflapp_logo.jpg" alt="app logo图标"/>
-                            <span>雷哥托福</span>
+                        <a href="http://www.gmatonline.cn/DownloadApp.html">
+                            <div class="first_layer">
+                                <img src="template/dean_tech_150528/images/gmatapp_logo.jpg" alt="app logo图标"/>
+                                <span>雷哥GMAT安卓版</span>
+                            </div>
+                        </a>
+                        <div class="code_box">
+                            <img src="template/dean_tech_150528/images/leigeQrCode.png" alt="app二维码图片"/>
                         </div>
+                    </li>
+                    <li>
+                        <a href="http://www.gmatonline.cn/DownloadApp.html">
+                            <div class="first_layer">
+                                <img src="template/dean_tech_150528/images/toeflapp_logo.jpg" alt="app logo图标"/>
+                                <span>雷哥托福苹果版</span>
+                            </div>
+                        </a>
                         <div class="code_box">
                             <img src="template/dean_tech_150528/images/toeflQrCode.jpg" alt="app二维码图片"/>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -171,26 +206,31 @@
 </div>
 
 <!--<div class="nav2_fl fl">-->
-    <!--<div class="relative logo_wrap inb">-->
-        <!--<a href="/index.html">-->
-            <!--<img src="/app/web_core/styles//app/web_core/styles/images-3/logo_3.png" alt="logo_图标">-->
-        <!--</a>-->
-    <!--</div>-->
-   <!---->
+<!--<div class="relative logo_wrap inb">-->
+<!--<a href="/index.html">-->
+<!--<img src="/app/web_core/styles//app/web_core/styles/images-3/logo_3.png" alt="logo_图标">-->
+<!--</a>-->
+<!--</div>-->
+<!---->
 <!--</div>-->
 <div class="deanheader" id="deanheader">
     <div class="nav_list tl clearfix">
 
         <!--logo 图标-->
         <div class="relative logo_wrap inb">
-            <h2><?php if(!isset($_G['setting']['navlogos'][$mnid])) { ?><a href="<?php if($_G['setting']['domain']['app']['default']) { ?>http://<?php echo $_G['setting']['domain']['app']['default'];?>/<?php } else { ?>./<?php } ?>" title="<?php echo $_G['setting']['bbname'];?>"><?php echo $_G['style']['boardlogo'];?></a><?php } else { ?><?php echo $_G['setting']['navlogos'][$mnid];?><?php } ?></h2>
+            <h2><?php if(!isset($_G['setting']['navlogos'][$mnid])) { ?><a
+                    href="<?php if($_G['setting']['domain']['app']['default']) { ?>http://<?php echo $_G['setting']['domain']['app']['default'];?>/<?php } else { ?>./<?php } ?>"
+                    title="<?php echo $_G['setting']['bbname'];?>"><?php echo $_G['style']['boardlogo'];?></a><?php } else { ?>
+                <?php echo $_G['setting']['navlogos'][$mnid];?><?php } ?></h2>
             <!--<span></span>-->
             <div class="clear"></div>
         </div>
         <ul class="inb tm nav_bar clearfix">
             <li class="bar-li"><a href="http://www.gmatonline.cn/index.html">首页</a></li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/practise/index.html">做题模考 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
+                <a href="http://www.gmatonline.cn/practise/index.html">做题模考 <img class="crow-1"
+                                                                                 src="template/dean_tech_150528/images/crow-1.png"
+                                                                                 alt=""></a>
                 <div class="nav2-wrap">
                     <ul class="nav2-list">
                         <li><a href="http://www.gmatonline.cn/question/">题库</a></li>
@@ -203,7 +243,9 @@
 
             </li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/analyze">GMAT报告 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
+                <a href="http://www.gmatonline.cn/analyze">GMAT报告 <img class="crow-1"
+                                                                       src="template/dean_tech_150528/images/crow-1.png"
+                                                                       alt=""></a>
                 <div class="nav2-wrap" style="width: 170px">
                     <ul class="nav2-list">
                         <li><a href="http://www.gmatonline.cn/analyze">Complete Report</a></li>
@@ -215,17 +257,23 @@
                 </div>
             </li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/gmatcourses/index.html">GMAT课程 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
-                <div class="nav2-wrap">
+                <a href="http://www.gmatonline.cn/gmatcourses/index.html">GMAT课程 <img class="crow-1"
+                                                                                      src="template/dean_tech_150528/images/crow-1.png"
+                                                                                      alt=""></a>
+                <div class="nav2-wrap" style="width: 140px;">
                     <ul class="nav2-list">
-                        <li><a href="http://smartapply.gmatonline.cn/public-class.html">公开课</a></li>
-                        <li><a href="http://www.gmatonline.cn/gmatcourses/index.html">直播课程</a></li>
-                        <li><a href="http://www.gmatonline.cn/video.html">视频课程</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmatbeginner.html">GMAT零基础</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmat600.html">考过600以下</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmat700.html">考过700以下</a></li>
+                        <li><a href="http://www.gmatonline.cn/gmatcourses/index.html">实时直播课程</a></li>
+                        <li><a href="http://www.gmatonline.cn/video.html">名师视频课程</a></li>
                     </ul>
                 </div>
             </li>
             <li class="bar-li">
-                <a href="http://www.gmatonline.cn/beikao/index.html">GMAT资讯 <img class="crow-1" src="template/dean_tech_150528/images/crow-1.png" alt=""></a>
+                <a href="http://www.gmatonline.cn/beikao/index.html">GMAT资讯 <img class="crow-1"
+                                                                                 src="template/dean_tech_150528/images/crow-1.png"
+                                                                                 alt=""></a>
                 <div class="nav2-wrap" style="width: 150px;">
                     <ul class="nav2-list">
                         <li><a href="http://www.gmatonline.cn/beikao/index.html">GMAT备考</a></li>
@@ -253,25 +301,34 @@
 
 <?php if(!IS_ROBOT) { if($_G['uid']) { ?>
 <ul id="myprompt_menu" class="p_pop" style="display: none;">
-    <li><a href="home.php?mod=space&amp;do=pm" id="pm_ntc" style="background-repeat: no-repeat; background-position: 0 50%;"><em class="prompt_news<?php if(empty($_G['member']['newpm'])) { ?>_0<?php } ?>"></em>消息</a></li>
+    <li><a href="home.php?mod=space&amp;do=pm" id="pm_ntc"
+           style="background-repeat: no-repeat; background-position: 0 50%;"><em
+            class="prompt_news<?php if(empty($_G['member']['newpm'])) { ?>_0<?php } ?>"></em>消息</a></li>
 
-    <li><a href="home.php?mod=follow&amp;do=follower"><em class="prompt_follower<?php if(empty($_G['member']['newprompt_num']['follower'])) { ?>_0<?php } ?>"></em>新听众<?php if($_G['member']['newprompt_num']['follower']) { ?>(<?php echo $_G['member']['newprompt_num']['follower'];?>)<?php } ?></a></li>
+    <li><a href="home.php?mod=follow&amp;do=follower"><em
+            class="prompt_follower<?php if(empty($_G['member']['newprompt_num']['follower'])) { ?>_0<?php } ?>"></em>
+        新听众<?php if($_G['member']['newprompt_num']['follower']) { ?>(<?php echo $_G['member']['newprompt_num']['follower'];?>)<?php } ?></a></li>
 
     <?php if($_G['member']['newprompt'] && $_G['member']['newprompt_num']['follow']) { ?>
-    <li><a href="home.php?mod=follow"><em class="prompt_concern"></em>我关注的(<?php echo $_G['member']['newprompt_num']['follow'];?>)</a></li>
+    <li><a href="home.php?mod=follow"><em class="prompt_concern"></em>我关注的
+        (<?php echo $_G['member']['newprompt_num']['follow'];?>)</a></li>
     <?php } ?>
     <?php if($_G['member']['newprompt']) { ?>
-    <?php if(is_array($_G['member']['category_num'])) foreach($_G['member']['category_num'] as $key => $val) { ?>    <li><a href="home.php?mod=space&amp;do=notice&amp;view=<?php echo $key;?>"><em class="notice_<?php echo $key;?>"></em><?php echo lang('template', 'notice_'.$key); ?>(<span class="rq"><?php echo $val;?></span>)</a></li>
+    <?php if(is_array($_G['member']['category_num'])) foreach($_G['member']['category_num'] as $key => $val) { ?>    <li><a href="home.php?mod=space&amp;do=notice&amp;view=<?php echo $key;?>"><em class="notice_<?php echo $key;?>"></em>
+        <?php echo lang('template', 'notice_'.$key); ?>(<span class="rq"><?php echo $val;?></span>)</a></li>
     <?php } ?>
     <?php } ?>
     <?php if(empty($_G['cookie']['ignore_notice'])) { ?>
-    <li class="ignore_noticeli"><a href="javascript:;" onClick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')" title="暂不提醒"><em class="ignore_notice"></em></a></li>
+    <li class="ignore_noticeli"><a href="javascript:;" onClick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')"
+                                   title="暂不提醒"><em class="ignore_notice"></em></a></li>
     <?php } ?>
 </ul>
 <?php } if(!empty($_G['style']['extstyle'])) { ?>
 <div id="sslct_menu" class="cl p_pop" style="display: none;">
-    <?php if(!$_G['style']['defaultextstyle']) { ?><span class="sslct_btn" onClick="extstyle('')" title="默认"><i></i></span><?php } ?>
-    <?php if(is_array($_G['style']['extstyle'])) foreach($_G['style']['extstyle'] as $extstyle) { ?>    <span class="sslct_btn" onClick="extstyle('<?php echo $extstyle['0'];?>')" title="<?php echo $extstyle['1'];?>"><i style='background:<?php echo $extstyle['2'];?>'></i></span>
+    <?php if(!$_G['style']['defaultextstyle']) { ?><span class="sslct_btn" onClick="extstyle('')"
+                                                  title="默认"><i></i></span><?php } ?>
+    <?php if(is_array($_G['style']['extstyle'])) foreach($_G['style']['extstyle'] as $extstyle) { ?>    <span class="sslct_btn" onClick="extstyle('<?php echo $extstyle['0'];?>')" title="<?php echo $extstyle['1'];?>"><i
+            style='background:<?php echo $extstyle['2'];?>'></i></span>
     <?php } ?>
 </div>
 <?php } ?><div id="qmenu_menu" class="p_pop <?php if(!$_G['uid']) { ?>blk<?php } ?>" style="display: none;">
@@ -334,11 +391,11 @@
         var xs_userName = xst.user.info.username || '憨憨熊';
         topUserInfo();
         $.ajax({
-            type:"get",
-            url:xs_userInfoUrl,
-            dataType:"jsonp",
-            jsonp:"callback",
-            success:function (data) {
+            type: "get",
+            url: xs_userInfoUrl,
+            dataType: "jsonp",
+            jsonp: "callback",
+            success: function (data) {
                 if (data) {
                     topUserInfo(data);
                 }
@@ -405,7 +462,7 @@
                 return false;
             }
             var data = {
-                q:val
+                q: val
             };
             if (top_search_kw == val) {
                 topSearchShow(top_search_cache, <?php echo $input;?>);
@@ -415,11 +472,11 @@
 
             if (top_search_ajax) top_search_ajax.abort();
             top_search_ajax = $.ajax({
-                url:top_search_url,
-                type:'get',
-                dataType:'jsonp',
-                data:data,
-                success:function (res) {
+                url: top_search_url,
+                type: 'get',
+                dataType: 'jsonp',
+                data: data,
+                success: function (res) {
                     top_search_ajax = null;
                     var htm = topSearchResult(res);
                     top_search_cache = htm;
@@ -445,14 +502,14 @@
                 for (i = 0; i < data['course']['result'].length; i++) {
                     var val = data['course']['result'][i];
                     course += '<li><a href="' + xs_www + '/course/' + val.id + '"  target="_blank"><div class="pic"><img src="' + val.imageUrl + '" alt="' + val.name + '" title="' + val.name + '"> </div>' +
-                    '<div class="cont"><p>' + val.name + '</p><p class="info"><span>主讲老师：' + val.teacher.name + ' </span><span>' + val.virtualStudentCount + '人在学</span></p></div></a></li>';
+                            '<div class="cont"><p>' + val.name + '</p><p class="info"><span>主讲老师：' + val.teacher.name + ' </span><span>' + val.virtualStudentCount + '人在学</span></p></div></a></li>';
                 }
             }
             if (data['user'] && data['user']['result'].length) {
                 for (i = 0; i < data['user']['result'].length; i++) {
                     var val = data['user']['result'][i];
                     user += '<li> <a href="' + xs_www + '/home/' + val.id + '"  target="_blank"><div class="pic"><img src="' + val.avatar + '" alt="' + val.username + '" title="' + val.username + '"></div>' +
-                    '<div class="cont"><p>' + val.username + '</p><p class="info"><span>发贴：' + val.postCount + ' </span><span>帅气值：' + val.shuaiqi + ' </span><span>被赞：' + val.praise + '</span></p></div></a></li>';
+                            '<div class="cont"><p>' + val.username + '</p><p class="info"><span>发贴：' + val.postCount + ' </span><span>帅气值：' + val.shuaiqi + ' </span><span>被赞：' + val.praise + '</span></p></div></a></li>';
                 }
             }
 

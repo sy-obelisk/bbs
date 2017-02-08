@@ -369,163 +369,246 @@
 
 
 <!---------------------------------------右边固定部分qq、微信、电话---------------------------------------------------->
-<div id="fixed_div">
-    <a target=blank href=tencent://message/?uin=2095453331&Site=www.cnclcy&Menu=yes>
-        <div class="fixed_div_img" onmouseover="bacMouseover(this)" onmouseout="bacMouseout(this)">
-            <img src="template/dean_tech_150528/images/public_qq.png" alt="qq图片"/>
-            <p>QQ咨询</p>
-        </div>
-    </a>
 
-    <div class="fixed_div_img fx_div_img_weixin" onmouseover="bacMouseover(this)" onmouseout="bacMouseout(this)">
-        <img src="template/dean_tech_150528/images/public_weixin.png" alt="微信图片"/>
-        <p>微信咨询</p>
-        <div class="img01">
-            <div>
-                <img src="template/dean_tech_150528/images/right_erweima_img.jpg" alt="" width="90px"/>
-            </div>
-        </div>
-
-    </div>
-    <div class="fixed_div_img fx_div_img_phone" onmouseover="bacMouseover(this)" onmouseout="bacMouseout(this)">
-        <img src="template/dean_tech_150528/images/public_phone.png" alt="电话图片"/>
-        <p>电话咨询</p>
-        <div class="img02">
-            <span>400-1816-180</span>
-        </div>
-    </div>
-    <a href="index.php?web/ceping">
-        <div class="fixed_div_img" onmouseover="bacMouseover(this)" onmouseout="bacMouseout(this)">
-            <img src="template/dean_tech_150528/images/public_cheping.png" alt="在线测评"/>
-            <p style="margin-top: 5px;">在线测评</p>
-        </div>
-    </a>
-    <div class="fixed_div_img fx_div_img_top" style="padding-top: 12px;" onclick="window.scrollTo('0','0');" onmouseover="bacMouseover(this)" onmouseout="bacMouseout(this)">
-        <img src="template/dean_tech_150528/images/public_top.png" alt="回到顶部"/>
+<!-------------------咨询框------------------------>
+<div class="refer_small" onclick="showZiXun()"></div>
+<div class="referBox">
+    <div class="refer_close" onclick="closeRefer()"></div>
+    <div class="refer_top"></div>
+    <div class="refer_con">
+        <ul>
+            <li>
+                <a href="http://p.qiao.baidu.com/im/index?siteid=7905926&ucid=18329536&cp=&cr=&cw=" target="_blank">
+                    <div class="comSize diffBG01"></div>
+                    <p>在线咨询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <div class="comSize diffBG02"></div>
+                    <p>微信</p>
+                    <div class="tanc_mask01 animated"><img src="template/dean_tech_150528/images/r_fixed/erm-wx.jpg" alt="二维码图片"></div>
+                </a>
+            </li>
+            <li>
+                <a href="tencent://message/?uin=1746295647&amp;Site=www.cnclcy&amp;Menu=yes" target="_blank">
+                    <div class="comSize diffBG03"></div>
+                    <p>QQ</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <div class="comSize diffBG04"></div>
+                    <p>电话</p>
+                    <div class="tanc_mask02 animated">400-1816-180</div>
+                </a>
+            </li>
+            <li>
+                <a href="tencent://message/?uin=2095453331&amp;Site=www.cnclcy&amp;Menu=yes" target="_blank">
+                    <div class="comSize diffBG05"></div>
+                    <p>吐槽入口</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="window.scroll(0,0)">
+                    <div class="diffBG06 animated">
+                        <img src="template/dean_tech_150528/images/r_fixed/refer_icon06.png" alt="回到顶部图标"/>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
-
-
 <!--/*固定部分css*/-->
 <style>
-    #fixed_div {
+    /*咨询框改版样式*/
+    .referBox{
         width: 60px;
+        height: 400px;
+        background: #ffffff;
+        border-radius: 40px;
         position: fixed;
-        top: 25%;
-        right: 20px;
-        z-index: 5;
+        right: 5px;
+        top: 50%;
+        z-index: 55;
+        margin-top: -200px;
+        -webkit-box-shadow:0 0 10px #c3c3c3;
+        -moz-box-shadow:0 0 10px #c3c3c3;
+        box-shadow:0 0 10px #c3c3c3;
     }
-
-    #fixed_div .fixed_div_img {
-        width: 69px;
-        height: 69px;
-        background: #b2b2b2;
-        margin-bottom: 5px;
-        position: relative;
-        color: white;
-        font-size: 12px;
+    .refer_close{
+        width: 15px;
+        height: 15px;
+        background: url("template/dean_tech_150528/images/r_fixed/refer_close.png") no-repeat;
+        position: absolute;
+        right: -5px;
+        top: -15px;
+    }
+    .refer_close:hover{
+        cursor: pointer;
+    }
+    .refer_top{
+        width: 60px;
+        height: 62px;
+        margin-top: -10px;
+        background: url("template/dean_tech_150528/images/r_fixed/refer_topImg.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .refer_small:hover{
+        cursor: pointer;
+    }
+    .refer_small{
+        width: 60px;
+        height: 62px;
+        background: url("template/dean_tech_150528/images/r_fixed/refer_topImg.png") no-repeat;
+        background-size: 100% 100%;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        margin-top: -32px;
+        display: none;
+    }
+    .refer_con{
+        width: 100%;
+    }
+    .refer_con ul li a{
+        width: 100%;
+        display: block;
         text-align: center;
-        padding-top: 7px;
+        padding: 8px 0 5px 0;
+        color: #878787;
+        font-size: 12px;
+        border-bottom: 1px #e5e5e5 solid;
+        position: relative;
+    }
+    .refer_con ul li:last-child a{
+        border-bottom: none;
+    }
+    .refer_con ul li a p{
+        margin-top: 5px;
+    }
+    .refer_con ul li:hover a{
+        color: #5fabf8;
+    }
+    .refer_con ul li .comSize{
+        width: 25px;
+        height: 25px;
+        margin: 0 auto;
+    }
+    .refer_con ul li:hover .diffBG01{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon001.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .refer_con ul li:hover .diffBG02{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon002.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .refer_con ul li:hover .diffBG03{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon003.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .refer_con ul li:hover .diffBG04{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon004.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .refer_con ul li:hover .diffBG05{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon005.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .diffBG01{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon01.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .diffBG02{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon02.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .diffBG03{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon03.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .diffBG04{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon04.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .diffBG05{
+        background: url("template/dean_tech_150528/images/r_fixed/refer_icon05.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .diffBG06{
+        width: 35px;
+        height: 18px;
+        margin: 0 auto;
+        /*background: url("../images/refer_icon06.png") no-repeat;*/
+    }
+    .refer_con ul li:nth-child(2):hover .tanc_mask01{
+        display: block;
+        -webkit-animation-name:fadeIn;
+        -webkit-animation-duration:0.8s;
+        -webkit-animation-timing-function:ease-out;
+        -webkit-animation-iteration-count: 1;
+    }
+    .refer_con ul li:nth-child(4):hover .tanc_mask02{
+        display: block;
+        -webkit-animation-name:fadeInLeft;
+        -webkit-animation-duration:0.3s;
+        -webkit-animation-timing-function:ease-out;
+        -webkit-animation-iteration-count: 1;
+    }
+    .refer_con ul li:last-child:hover .diffBG06{
+        -webkit-animation-name:bounce;
+        -webkit-animation-duration:0.8s;
+        -webkit-animation-timing-function:ease-out;
+        -webkit-animation-iteration-count: 1;
+    }
+    .tanc_mask01{
+        width: 113px;
+        height: 107px;
+        background: url("template/dean_tech_150528/images/r_fixed/bg-11.png") no-repeat;
+        position: absolute;
+        left: -113px;
+        top: -20px;
+        display: none;
+        padding: 10px 13px 10px 10px;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
     }
-    .fixed_div_img:hover{
-        /*background: #00a1e8;*/
-        cursor: pointer;
-
+    .tanc_mask01 img{
+        width: 100%;
     }
-
-    .fixed_div_img .img01 {
-        width: 133px;
-        height: 126px;
-        background: url("template/dean_tech_150528/images/weixin_show.png") center no-repeat;
-        position: absolute;
-        right: 60px;
-        top: -35px;
-        display: none;
-    }
-
-    .fixed_div_img .img01 div {
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        left: 41%;
-        margin-left: -41px;
-        top: 50%;
-        margin-top: -50px;
-    }
-
-    .fixed_div_img .img01 div img {
-        margin-top: 5px;
-        margin-left: 5px;
-    }
-
-    .fixed_div_img .img02 {
+    .tanc_mask02{
         width: 212px;
         height: 45px;
         line-height: 45px;
-        background: url("template/dean_tech_150528/images/phone_show.png") center no-repeat;
+        background: url("template/dean_tech_150528/images/r_fixed/bg-12.png") no-repeat;
         position: absolute;
-        right: 70px;
+        left: -212px;
         top: 10px;
+        color: #ffffff;
+        font-size: 22px;
         display: none;
-        text-align: center;
     }
-
-    .fixed_div_img .img02 span {
-        color: white;
-        font-size: 20px;
-        letter-spacing: 2px;
-    }
-
-    .fx_div_img_phone:hover .img02 {
-        display: block;
-    }
-
-    .fx_div_img_weixin:hover .img01 {
-        display: block;
-    }
-
-#log_reg_zzc{
-    background: #000;
-    opacity: .4;
-    filter: alpha(opacity=40);
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
-}
 </style>
 
-
-<!--弹出框登陆与注册界面遮罩层-->
-<div id="log_reg_zzc"></div>
-<script>
-    function isStrictMode() {
-        return document.compatMode != "BackCompat"
-    }
-    function getHeight() {
-        return isStrictMode() ? Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight) : Math.max(document.body.scrollHeight, document.body.clientHeight)
-    }
-    function getWidth() {
-        return isStrictMode() ? Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth) : Math.max(document.body.scrollWidth, document.body.clientWidth)
-    }
-    var wenzW = getWidth();
-    var wenzH = getHeight();
-    var zzc=document.getElementById("log_reg_zzc");
-    zzc.style.width=wenzW + "px";
-    zzc.style.height=wenzH + "px";
-</script>
 <script type="text/javascript">
-    function bacMouseover(self){
-        self.style.backgroundColor="#00a1e8";
+    //关闭咨询框
+    function closeRefer(){
+        var referBox=document.getElementsByClassName("referBox")[0];
+        var refer_small=document.getElementsByClassName("refer_small")[0];
+        referBox.style.display="none";
+        refer_small.style.display="block";
     }
-    function bacMouseout(self){
-        self.style.backgroundColor="#b2b2b2";
+    //点击小的咨询展示大的咨询
+    function showZiXun(){
+        var referBox=document.getElementsByClassName("referBox")[0];
+        var refer_small=document.getElementsByClassName("refer_small")[0];
+        referBox.style.display="block";
+        refer_small.style.display="none";
     }
 
 </script>
+
 <script src="template/dean_tech_150528/js/bootstrap.js"></script>
 <!--<script src="template/dean_tech_150528/js/calendar.js"></script>-->
 <!--<script src="template/dean_tech_150528/js/jquery-ui.js"></script>-->
