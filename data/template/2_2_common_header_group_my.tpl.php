@@ -129,7 +129,7 @@
                     <img src="template/dean_tech_150528/images/index_kevinIcon.png" alt="图标">
                 </li>
                 <li><a class="on" href="http://www.gmatonline.cn/">GMAT</a></li>
-                <li><a href="http://toefl.gmatonline.cn/">TOEFL</a></li>
+                <li><a href="http://www.toeflonline.cn/">TOEFL</a></li>
                 <li><a href="http://ielts.gmatonline.cn/">IELTS</a></li>
                 <li><a href="http://smartapply.gmatonline.cn/">留学</a></li>
                 <li>|</li>

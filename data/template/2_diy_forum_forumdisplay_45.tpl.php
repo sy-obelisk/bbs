@@ -193,11 +193,11 @@ src="template/dean_tech_150528/images/luntan_lunbo003.jpg" title="微信讲座" 
 src="template/dean_tech_150528/images/luntan_lunbo03.png" title="" alt=" "></a>
 </div>
 <div class="item">
-<a href="http://toefl.gmatonline.cn/toeflcourses.html" title=""><img
+<a href="http://www.toeflonline.cn/toeflcourses.html" title=""><img
 src="template/dean_tech_150528/images/luntan_lunbo04.png" title="" alt=" "></a>
 </div>
 <div class="item">
-<a href="toefl.gmatonline.cn" title=""><img
+<a href="www.toeflonline.cn" title=""><img
 src="template/dean_tech_150528/images/luntan_lunbo05.png" title="" alt=" "></a>
 </div>
 <div class="item">

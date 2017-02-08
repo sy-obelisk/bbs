@@ -146,10 +146,10 @@
                     <img src="template/dean_tech_150528/images/index_kevinIcon.png" alt="图标">
                 </li>
                 <li><a class="on" href="http://www.gmatonline.cn/">GMAT</a></li>
-                <li><a href="http://toefl.gmatonline.cn/">TOEFL</a></li>
+                <li><a href="http://www.toeflonline.cn/">TOEFL</a></li>
                 <li><a href="http://ielts.gmatonline.cn/">IELTS</a></li>
                 <li><a href="http://smartapply.gmatonline.cn/">留学</a></li>
-                <li><a href="http://smartapply.gmatonline.cn /public-class.html">公开课</a></li>
+                <li><a href="http://smartapply.gmatonline.cn/public-class.html">公开课</a></li>
                 <li>|</li>
                 <li><span>400-1816-180</span></li>
                 <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1746295647&amp;site=qq&amp;menu=yes">在线咨询</a>
